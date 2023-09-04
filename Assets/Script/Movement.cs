@@ -43,6 +43,11 @@ public class Movement : MonoBehaviour
                 if(groundcheck)
                     Jump(jumpboost);
             }
+        
+        if(Input.GetMouseButtonDown(0))
+        {
+            StartCoroutine(Dash());
+        }
         moveDirection = new Vector2(horizontal,vertical).normalized;
     }
 
