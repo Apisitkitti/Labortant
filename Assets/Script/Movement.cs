@@ -16,17 +16,22 @@ public class Movement : MonoBehaviour
     private float horizontal;
     private float vertical;
     private bool groundcheck;
+    private bool canDash = true;
+    bool isFacingRight =true;
     bool isDashing;
-    Vector2 moveDirection;
+    
     #endregion
 
+    #region SerrializeField
+    [SerializeField] TrailRenderer tr;
+    
     [Header("Dash Setting")]
-    [SerializeField] float dashSpeed = 10f;
-    [SerializeField] float dashDuration = 0.7f;
-    [SerializeField] float dashCooldown = 1f;
+    [SerializeField] private float dashingPower = 24f;
+    [SerializeField]private float dashingTime =0.2f;
+    [SerializeField]private float dashingCooldown = 1f;
+    #endregion
 
     
-
     Rigidbody2D rb;
 
     void Start()
@@ -38,17 +43,33 @@ public class Movement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+
+            if(isDashing)
+            {
+                return;
+            }
             if(Input.GetKeyDown(KeyCode.Space))
             { 
                 if(groundcheck)
                     Jump(jumpboost);
             }
-        moveDirection = new Vector2(horizontal,vertical).normalized;
+            if(Input.GetMouseButtonDown(1)&& canDash)
+            {
+                StartCoroutine(Dash());
+                Debug.Log("dash");
+            }
+
+            Flip();
+        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(isDashing)
+        {
+            return;
+        }
         rb.velocity = new Vector2(horizontal*speed*Time.deltaTime,rb.velocity.y);
       
     }
@@ -66,12 +87,31 @@ public class Movement : MonoBehaviour
            groundcheck = true; 
         }
     }
+     private void Flip()
+    {
+        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
+        {
+            Vector3 localScale = transform.localScale;
+            isFacingRight = !isFacingRight;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
+    }
     private IEnumerator Dash()
     {
+        canDash = false;
         isDashing = true;
-        rb.velocity = new Vector2(moveDirection.x*dashSpeed,moveDirection.y*dashSpeed); 
-        yield return new WaitForSeconds(dashDuration);
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.velocity = new Vector2(transform.localScale.x*dashingPower,0f);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        tr.emitting = false;
+        rb.gravityScale = originalGravity;
         isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
     }
+  
 
 }
