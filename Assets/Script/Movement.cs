@@ -1,24 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Burst.Intrinsics;
-using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
     #region Public
-    public float speed = 1f;
+    public float speed = 1.5f;
+
     public float jumpboost = 5f;
     public float forward = 5f;
+    
     #endregion
     
     #region Private
     private float horizontal;
     private float vertical;
     private bool groundcheck;
+
     private bool canDash = true;
     bool isFacingRight =true;
     bool isDashing;
+    float currentSpeed = 0.5f;
     
     #endregion
 
@@ -29,6 +31,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float dashingPower = 24f;
     [SerializeField]private float dashingTime =0.2f;
     [SerializeField]private float dashingCooldown = 1f;
+    [SerializeField]private LayerMask groundLayer;
     #endregion
 
     
@@ -36,7 +39,7 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        
+        currentSpeed = speed;
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()
@@ -76,15 +79,20 @@ public class Movement : MonoBehaviour
 
     void Jump(float jumpboost)
     {
+        
         rb.AddForce(Vector2.up*jumpboost);
         groundcheck = false;
+        
+        
+        
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.tag == "Ground")
         {
            groundcheck = true; 
+           speed = currentSpeed;
         }
     }
      private void Flip()
