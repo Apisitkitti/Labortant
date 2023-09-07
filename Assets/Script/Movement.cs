@@ -16,6 +16,7 @@ public class Movement : MonoBehaviour
     private float horizontal;
     private float vertical;
     private bool groundcheck;
+    Vector2 Gravity;
 
     private bool canDash = true;
     bool isFacingRight =true;
@@ -26,19 +27,18 @@ public class Movement : MonoBehaviour
 
     #region SerrializeField
     [SerializeField] TrailRenderer tr;
-    
+    [SerializeField] float fallMultiplier;
+   
     [Header("Dash Setting")]
     [SerializeField] private float dashingPower = 24f;
     [SerializeField]private float dashingTime =0.2f;
     [SerializeField]private float dashingCooldown = 1f;
-    [SerializeField]private LayerMask groundLayer;
     #endregion
-
-    
     Rigidbody2D rb;
 
     void Start()
     {
+        Gravity = new Vector2(0,-Physics2D.gravity.y);
         currentSpeed = speed;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -51,17 +51,19 @@ public class Movement : MonoBehaviour
             {
                 return;
             }
-            if(Input.GetKeyDown(KeyCode.Space))
+            if(Input.GetKeyDown(KeyCode.Space)&&groundcheck)
             { 
-                if(groundcheck)
-                    Jump(jumpboost);
+                Jump(jumpboost);
+            }
+            if(rb.velocity.y<0)
+            {
+                rb.velocity -= Gravity*fallMultiplier*Time.deltaTime;
             }
             if(Input.GetMouseButtonDown(1)&& canDash)
             {
                 StartCoroutine(Dash());
                 Debug.Log("dash");
             }
-
             Flip();
         
     }
@@ -82,9 +84,6 @@ public class Movement : MonoBehaviour
         
         rb.AddForce(Vector2.up*jumpboost);
         groundcheck = false;
-        
-        
-        
     }
 
     void OnTriggerEnter2D(Collider2D col)
