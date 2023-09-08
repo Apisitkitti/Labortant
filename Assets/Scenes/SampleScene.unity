@@ -1846,13 +1846,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 250
-  jumpboost: 500
+  jumpboost: 525
   forward: 5
   tr: {fileID: 567706164}
-  fallMultiplier: 1.5
+  fallMultiplier: 2.15
   dashingPower: 30
-  dashingTime: 0.1
-  dashingCooldown: 1
+  dashingTime: 0.125
+  dashingCooldown: 1.5
 --- !u!50 &1934986374
 Rigidbody2D:
   serializedVersion: 4
