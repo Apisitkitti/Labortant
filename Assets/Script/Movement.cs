@@ -4,27 +4,25 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    #region Public
+   #region Public
     public float speed = 1.5f;
-
     public float jumpboost = 5f;
     public float forward = 5f;
-    
-    #endregion
+    #endregion  
+
     
     #region Private
     private float horizontal;
     private float vertical;
     private bool groundcheck;
+   
     Vector2 Gravity;
-
     private bool canDash = true;
     bool isFacingRight =true;
     bool isDashing;
     float currentSpeed = 0.5f;
-    
     #endregion
-
+    
     #region SerrializeField
     [SerializeField] TrailRenderer tr;
     [SerializeField] float fallMultiplier;
@@ -86,9 +84,9 @@ public class Movement : MonoBehaviour
         groundcheck = false;
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.tag == "Ground")
+        if(col.gameObject.tag == "Ground" || col.gameObject.tag == "Platform")
         {
            groundcheck = true; 
            speed = currentSpeed;
