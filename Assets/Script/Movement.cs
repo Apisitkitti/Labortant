@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
     public float speed = 1.5f;
     public float jumpboost = 5f;
     public float forward = 5f;
+    
     #endregion  
 
     
@@ -15,6 +16,7 @@ public class Movement : MonoBehaviour
     private float horizontal;
     private float vertical;
     private bool groundcheck;
+    private int jump =0;
    
     Vector2 Gravity;
     private bool canDash = true;
@@ -62,6 +64,7 @@ public class Movement : MonoBehaviour
                 StartCoroutine(Dash());
                 Debug.Log("dash");
             }
+
             Flip();
         
     }

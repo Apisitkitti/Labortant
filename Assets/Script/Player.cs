@@ -1,19 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
   
   public int Health = 100;
+  
   public SpriteRenderer spriteRenderer;
   public float Color_Transition = 1f;
-  //public int damage = 15;
+  [SerializeField] TMP_Text Hp_text;
   [SerializeField] GameObject Lose;
 
   void Update()
   {
     Hp();
+    Hp_text.text = "HP:  "+Health;
   }
   public void TakeDam(int damage)
   {
@@ -33,12 +36,6 @@ public class Player : MonoBehaviour
       Destroy(gameObject);
       Lose.SetActive(true);
     }
-  //  void OnTriggerEnter2D(Collider2D col)
-  //  {
-  //   if(col.gameObject.tag == "bullet")
-  //   {
-  //     TakeDam(damage);
-  //   }
-  //  }
+
   }
 }
