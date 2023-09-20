@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
   void Update()
   {
     Hp();
-    Hp_text.text = "HP:  "+Health;
+    Hp_text.text = "HP:  "+ Health;
   }
   public void TakeDam(int damage)
   {
