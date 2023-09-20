@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
   public int Health = 100;
   public SpriteRenderer spriteRenderer;
   public float Color_Transition = 1f;
+  //public int damage = 15;
   [SerializeField] GameObject Lose;
 
   void Update()
@@ -32,5 +33,12 @@ public class Player : MonoBehaviour
       Destroy(gameObject);
       Lose.SetActive(true);
     }
+  //  void OnTriggerEnter2D(Collider2D col)
+  //  {
+  //   if(col.gameObject.tag == "bullet")
+  //   {
+  //     TakeDam(damage);
+  //   }
+  //  }
   }
 }

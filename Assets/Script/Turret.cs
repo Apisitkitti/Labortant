@@ -1,28 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    public Transform firePoint;
     public GameObject bulletPrefab;
-    public float fireRate = 0.1f;
-    private float nextFireTime = 0f;
+    public Transform firePoint;
+    public float fireRate = 1.0f;
+    private float nextFireTime = 0.0f;
 
     void Update()
     {
-        // Check if it's time to shoot
+        // Check if it's time to fire again
         if (Time.time >= nextFireTime)
         {
-            // Call the Shoot function and update the nextFireTime
+            // Fire a bullet
             Shoot();
-            nextFireTime = Time.time + 1f / fireRate;
+            // Set the next fire time
+            nextFireTime = Time.time + 1.0f / fireRate;
         }
     }
-    
+
     void Shoot()
     {
         // Instantiate a bullet at the fire point
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        // Add force to the bullet (adjust the force as needed)
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(firePoint.up * 10.0f, ForceMode2D.Impulse);
     }
 }

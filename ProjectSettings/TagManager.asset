@@ -8,6 +8,7 @@ TagManager:
   - Platform
   - Spike
   - Dead
+  - bullet
   layers:
   - Default
   - TransparentFX
