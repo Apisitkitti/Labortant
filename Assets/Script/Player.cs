@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
   void Update()
   {
     Hp();
-    Hp_text.text = "HP:  "+ Health;
+    
   }
   public void TakeDam(int damage)
   {
@@ -31,10 +31,12 @@ public class Player : MonoBehaviour
   }
   void Hp()
   {
+    Hp_text.text = "HP:  "+ Health;
     if(Health <= 0)
     {
       Destroy(gameObject);
       Lose.SetActive(true);
+      Hp_text.text = "HP:  "+ 0;
     }
 
   }
