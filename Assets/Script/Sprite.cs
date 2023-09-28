@@ -6,15 +6,16 @@ public class Sprite : MonoBehaviour
 {
     public int damage = 10;
     public Player player;
-    void OnTriggerEnter2D(Collider2D col)
+
+    void OnCollisionEnter2D(Collision2D col)
     {
-      if(col.gameObject.tag == "Player")
-      {
-        player = col.GetComponent<Player>();
-        if(player != null)
+        if (col.gameObject.CompareTag("Player"))
         {
-          player.TakeDam(damage);
+            player = col.gameObject.GetComponent<Player>();
+            if (player != null)
+            {
+                player.TakeDam(damage);
+            }
         }
-      }
     }
 }

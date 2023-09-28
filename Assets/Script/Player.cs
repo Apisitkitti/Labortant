@@ -7,11 +7,19 @@ public class Player : MonoBehaviour
 {
   
   public int Health = 100;
-  
+  public HealthBar healthBar;
+  public int currentHealth;
+
   public SpriteRenderer spriteRenderer;
   public float Color_Transition = 1f;
   [SerializeField] TMP_Text Hp_text;
   [SerializeField] GameObject Lose;
+
+  void Start()
+  {
+    currentHealth = Health;
+    healthBar.SetMaxHealth(Health);    
+  }
 
   void Update()
   {
@@ -21,7 +29,9 @@ public class Player : MonoBehaviour
   public void TakeDam(int damage)
   {
     Health-= damage;
+    currentHealth-=damage;
     StartCoroutine(Damage());
+    healthBar.SetHeatlh(currentHealth);
   }
   private IEnumerator Damage()
   {
