@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     public float speed = 1.5f;
     public float jumpboost = 5f;
     public float forward = 5f;
-    public float invincibilityDuration = 5f;
+    
     #endregion  
 
     
