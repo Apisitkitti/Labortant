@@ -42,12 +42,17 @@ public class Player : MonoBehaviour
   void Hp()
   {
     Hp_text.text = "HP:  "+ Health;
+    if(Health<= 30)
+    {
+
+    }
     if(Health <= 0)
     {
       Destroy(gameObject);
       Lose.SetActive(true);
       Hp_text.text = "HP:  "+ 0;
     }
+
 
   }
 }
