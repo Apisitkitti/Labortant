@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
 private IEnumerator InvincibilityCoroutine(float duration)
 {
     // Add visual/audio effects for invincibility if desired
-    spriteRenderer.color = Color.yellow; // Set player color to indicate invincibility
+    spriteRenderer.color = Color.green; // Set player color to indicate invincibility
 
     yield return new WaitForSeconds(duration);
 
