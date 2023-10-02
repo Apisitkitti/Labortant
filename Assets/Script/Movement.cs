@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     public float speed = 1.5f;
     public float jumpboost = 5f;
     public float forward = 5f;
-    
+    public float invincibilityDuration = 5f;
     #endregion  
 
     
@@ -89,7 +89,7 @@ public class Movement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.tag == "Ground" || col.gameObject.tag == "Platform")
+        if(col.gameObject.tag == "Ground" || col.gameObject.tag == "Platform" || col.gameObject.tag == "Spike")
         {
            groundcheck = true; 
            speed = currentSpeed;
