@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
     public float speed = 1.5f;
     public float jumpboost = 5f;
     public float forward = 5f;
+     public Animator anim;
     
     #endregion  
 
@@ -51,13 +52,27 @@ public class Movement : MonoBehaviour
             {
                 return;
             }
+            if(horizontal > 0 || horizontal < 0)
+            {
+              anim.SetBool("run",true);
+            }
+            else if(horizontal == 0)
+            {
+               anim.SetBool("run",false);
+            }
             if(Input.GetKeyDown(KeyCode.Space)&&groundcheck)
             { 
-                Jump(jumpboost);
+               Jump(jumpboost);
+            }
+            if(groundcheck)
+            {
+              anim.SetBool("Jump",false);
+              
             }
             if(rb.velocity.y<0)
             {
                 rb.velocity -= Gravity*fallMultiplier*Time.deltaTime;
+                anim.SetBool("Jump",false);
             }
             if(Input.GetMouseButtonDown(1)&& canDash)
             {
@@ -77,6 +92,8 @@ public class Movement : MonoBehaviour
             return;
         }
         rb.velocity = new Vector2(horizontal*speed*Time.deltaTime,rb.velocity.y);
+        
+
       
     }
 
@@ -84,6 +101,7 @@ public class Movement : MonoBehaviour
     {
         
         rb.AddForce(Vector2.up*jumpboost);
+        anim.SetBool("Jump",true);
         groundcheck = false;
     }
 

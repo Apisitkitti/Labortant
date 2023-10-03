@@ -9,11 +9,12 @@ TagManager:
   - Spike
   - Dead
   - bullet
+  - enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - enemy
   - Water
   - UI
   - 

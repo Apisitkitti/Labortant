@@ -31,6 +31,10 @@ public class Player : MonoBehaviour
   void Update()
   {
     Hp();
+    if(Input.GetKeyDown(KeyCode.Q)&& Health>=30)
+    {
+      ActivateInvincibility(invincibilityDuration);
+    }
     
   }
   public void ActivateInvincibility(float duration)

@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class EnemyDam : MonoBehaviour
 {
-   public int damage = 10;
+   public int damage = 0;
     public Player player;
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
             player = col.gameObject.GetComponent<Player>();
             if (player != null)
             {
-                player.TakeDam(10);
+                player.TakeDam(damage);
+                Debug.Log(damage);
             }
         }
     }
