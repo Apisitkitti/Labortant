@@ -1,42 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Burst.Intrinsics;
-using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    #region Public
-    public float speed = 1f;
+   #region Public
+    public float speed = 1.5f;
     public float jumpboost = 5f;
     public float forward = 5f;
-    #endregion
+     public Animator anim;
+    
+    #endregion  
+
     
     #region Private
     private float horizontal;
     private float vertical;
     private bool groundcheck;
+    private int jump =0;
+   
+    Vector2 Gravity;
     private bool canDash = true;
     bool isFacingRight =true;
     bool isDashing;
-    
+    float currentSpeed = 0.5f;
     #endregion
-
+    
     #region SerrializeField
     [SerializeField] TrailRenderer tr;
-    
+    [SerializeField] float fallMultiplier;
+   
     [Header("Dash Setting")]
     [SerializeField] private float dashingPower = 24f;
     [SerializeField]private float dashingTime =0.2f;
     [SerializeField]private float dashingCooldown = 1f;
     #endregion
-
-    
     Rigidbody2D rb;
 
     void Start()
     {
-        
+        Gravity = new Vector2(0,-Physics2D.gravity.y);
+        currentSpeed = speed;
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()
@@ -48,10 +52,27 @@ public class Movement : MonoBehaviour
             {
                 return;
             }
-            if(Input.GetKeyDown(KeyCode.Space))
+            if(horizontal > 0 || horizontal < 0)
+            {
+              anim.SetBool("run",true);
+            }
+            else if(horizontal == 0)
+            {
+               anim.SetBool("run",false);
+            }
+            if(Input.GetKeyDown(KeyCode.Space)&&groundcheck)
             { 
-                if(groundcheck)
-                    Jump(jumpboost);
+               Jump(jumpboost);
+            }
+            if(groundcheck)
+            {
+              anim.SetBool("Jump",false);
+              
+            }
+            if(rb.velocity.y<0)
+            {
+                rb.velocity -= Gravity*fallMultiplier*Time.deltaTime;
+                anim.SetBool("Jump",false);
             }
             if(Input.GetMouseButtonDown(1)&& canDash)
             {
@@ -71,20 +92,25 @@ public class Movement : MonoBehaviour
             return;
         }
         rb.velocity = new Vector2(horizontal*speed*Time.deltaTime,rb.velocity.y);
+        
+
       
     }
 
     void Jump(float jumpboost)
     {
+        
         rb.AddForce(Vector2.up*jumpboost);
+        anim.SetBool("Jump",true);
         groundcheck = false;
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.tag == "Ground")
+        if(col.gameObject.tag == "Ground" || col.gameObject.tag == "Platform" || col.gameObject.tag == "Spike")
         {
            groundcheck = true; 
+           speed = currentSpeed;
         }
     }
      private void Flip()
