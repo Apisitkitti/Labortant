@@ -16,6 +16,7 @@ public class Attack : MonoBehaviour
         {
             AttackMode();
         }
+        
     }
 
   void AttackMode()
