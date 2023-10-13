@@ -11,21 +11,43 @@ public class GroundCheck : MonoBehaviour
         if(col.gameObject.tag == "Platform")
         {
             Cap.isTrigger = true;
+            Box.isTrigger = true;
         }
-        // if(col.gameObject.tag == "Ground")
-        // {
-        //  Box.isTrigger = false;
-        // }
     }
     void OnTriggerExit2D(Collider2D col)
     {
         if(col.gameObject.tag == "Platform")
         {
             Cap.isTrigger = false;
+            Box.isTrigger = true;
         }
-        //  if(col.gameObject.tag == "Ground")
-        // {
-        //  Box.isTrigger = true ;
-        // }
+        
     }
+     void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.tag == "Ground")
+        {
+            Cap.isTrigger = false;
+            Box.isTrigger = false;
+        }
+        
+    }
+
+
+    void OnCollisionExit2D(Collision2D col)
+    {
+      if(col.gameObject.tag == "Ground")
+        {
+          Box.isTrigger = true;
+        }
+    }
+     void OnCollisionStay2D(Collision2D col)
+    {
+      if(col.gameObject.tag == "Ground")
+        {
+          Box.isTrigger = false;
+        }
+    }
+   
+    
 }
