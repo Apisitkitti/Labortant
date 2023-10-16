@@ -1317,7 +1317,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 6.1, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2840,6 +2840,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 4505007273403947961}
+    - target: {fileID: 490631989, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
+      propertyPath: knockbackDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 490631993, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 4505007273403947962}
     - target: {fileID: 3893787249847409398, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -2890,7 +2898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7636089034429986809, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
       propertyPath: KnockbackForce
-      value: 20000
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
@@ -4974,82 +4982,82 @@ MonoBehaviour:
   - position: {x: -12.327268, y: 0.2251904, z: 0}
     color: {r: 0, g: 0, b: 0, a: 1}
     uv: {x: 0, y: 0}
-  - position: {x: -12.5266, y: -0.2167, z: 0}
+  - position: {x: -12.5258, y: -0.2134, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.5163, y: -0.2776, z: 0}
+  - position: {x: -12.5159, y: -0.2744, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.4879, y: -0.3325, z: 0}
+  - position: {x: -12.4879, y: -0.3294, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.4441, y: -0.3761, z: 0}
+  - position: {x: -12.4444, y: -0.3733, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.3891, y: -0.4042, z: 0}
+  - position: {x: -12.3896, y: -0.4018, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.3265, y: -0.4142, z: 0}
+  - position: {x: -12.3258, y: -0.4123, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.7316, y: -0.4035, z: 0}
+  - position: {x: 12.7417, y: -0.414, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.7926, y: -0.3939, z: 0}
+  - position: {x: 12.8027, y: -0.4045, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.8478, y: -0.3662, z: 0}
+  - position: {x: 12.8579, y: -0.3767, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.8919, y: -0.3229, z: 0}
+  - position: {x: 12.9021, y: -0.3335, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.9207, y: -0.2683, z: 0}
+  - position: {x: 12.9309, y: -0.2789, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.9314, y: -0.2102, z: 0}
+  - position: {x: 12.9417, y: -0.2138, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.9466, y: 0.2465, z: 0}
+  - position: {x: 12.9412, y: 0.2547, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.9391, y: 0.3079, z: 0}
+  - position: {x: 12.9316, y: 0.3157, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.9132, y: 0.364, z: 0}
+  - position: {x: 12.9038, y: 0.3709, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.8715, y: 0.4095, z: 0}
+  - position: {x: 12.8605, y: 0.415, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.8178, y: 0.4401, z: 0}
+  - position: {x: 12.8058, y: 0.4438, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.7465, y: 0.4532, z: 0}
+  - position: {x: 12.741, y: 0.4545, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.3323, y: 0.426, z: 0}
+  - position: {x: -12.3284, y: 0.4296, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.3933, y: 0.4164, z: 0}
+  - position: {x: -12.3894, y: 0.42, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.4485, y: 0.3886, z: 0}
+  - position: {x: -12.4446, y: 0.3922, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.4926, y: 0.3453, z: 0}
+  - position: {x: -12.4887, y: 0.3489, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.5214, y: 0.2906, z: 0}
+  - position: {x: -12.5175, y: 0.2943, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.5321, y: 0.2235, z: 0}
+  - position: {x: -12.5282, y: 0.2285, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
   m_Triangles: 000003000100010003000200040008000800040008000900040009000a0004000a000b0004000b000c0004000c000d00040005000e0004000d000e0005000e000f0005000f001000050010001100050011001200050012001300050006001400050013001400060014001500060015001600060016001700060017001800060018001900060007001a00060019001a0007001a001b0007001b001c0007001c001d0007001d001e0007001e001f0008000400070008001f000700
   m_LocalBounds:
-    m_Center: {x: 0.20725012, y: 0.019500002, z: 0}
-    m_Extent: {x: 12.739349, y: 0.43370003, z: 0}
+    m_Center: {x: 0.20674992, y: 0.020249993, z: 0}
+    m_Extent: {x: 12.73495, y: 0.43425, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -8978,14 +8986,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1b04eacb7bd4264ca9144b96e2a116b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentAttack: 0
   damage: 12
   attackPoint: {fileID: 1723526282}
   attackRange: 0.3
+  attackTime: 1
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
   anim: {fileID: 1504526157}
-  knockbackForce: 5
+  knockbackForce: 1000
 --- !u!4 &1531556044 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6765767116352598341, guid: d56f6c3236b495042bb5e7cd3ba7bfe5, type: 3}
@@ -31845,7 +31855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1877698338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32868,6 +32878,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 490631989, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 4505007273403947961}
+    - target: {fileID: 490631989, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
+      propertyPath: knockbackDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 490631993, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 4505007273403947962}
     - target: {fileID: 1369744571, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
       propertyPath: target
       value: 
@@ -32934,7 +32956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7636089034429986809, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
       propertyPath: KnockbackForce
-      value: 20000
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7636089034429986809, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
       propertyPath: spriteRenderer
