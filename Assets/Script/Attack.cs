@@ -15,23 +15,29 @@ public class Attack : MonoBehaviour
     public Animator anim;
     public float knockbackForce = 5f;
 
-    void FixedUpdate()
+    void Update()
+{
+    if (currentAttack <= mincurrenttime)
     {
-      if(currentAttack <= mincurrenttime )
-      {
-         if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             AttackMode();
-            currentAttack = attackTime; 
+            currentAttack = attackTime;
         }
-       
-      }
-      else
-      {
-         currentAttack -= Time.fixedDeltaTime;
-      }
-
     }
+    else
+    {
+        currentAttack -= Time.deltaTime;
+
+        // Check if currentAttack is close enough to 0 using a tolerance value
+        float tolerance = 0.001f; // Adjust the tolerance based on your specific needs
+        if (currentAttack < tolerance)
+        {
+            currentAttack = mincurrenttime;
+        }
+    }
+}
+
        
 
     void AttackMode()
