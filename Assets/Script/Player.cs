@@ -17,11 +17,11 @@ public class Player : MonoBehaviour
   public float invincibilityDuration = 5f;
   [SerializeField] TMP_Text Hp_text;
   [SerializeField] GameObject Lose;
+  [SerializeField] BloodSkill mega_attack;
 
   private bool isInvincible = false;
 
   
-
   void Start()
   {
     currentHealth = Health;
@@ -34,6 +34,10 @@ public class Player : MonoBehaviour
     if(Input.GetKeyDown(KeyCode.Q)&& Health>=30)
     {
       ActivateInvincibility(invincibilityDuration);
+    }
+     if(Input.GetKeyDown(KeyCode.E)&& Health>=50)
+    {
+      mega_attack.AttackUpGrade();
     }
     
   }
