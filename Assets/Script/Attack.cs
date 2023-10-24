@@ -7,6 +7,7 @@ public class Attack : MonoBehaviour
 {
     private float mincurrenttime = 0f;
     [SerializeField] public float currentAttack = 0f;
+    [SerializeField] Tetsuga wave;
     public int damage = 12;
     public Transform attackPoint;
     public float attackRange = 0.5f;
@@ -14,6 +15,7 @@ public class Attack : MonoBehaviour
     public LayerMask enemyLayer;
     public Animator anim;
     public float knockbackForce = 5f;
+
 
     void Update()
 {
@@ -24,6 +26,10 @@ public class Attack : MonoBehaviour
             AttackMode();
             currentAttack = attackTime;
         }
+    }
+    if (Input.GetKeyDown(KeyCode.R))
+    { 
+        wave.PerformWaveAttack();
     }
     else
     {

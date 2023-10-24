@@ -6,7 +6,7 @@ public class Tetsuga : MonoBehaviour
 {
     [SerializeField] private GameObject WavePrefab;
     [SerializeField] private Transform attackpo;
-    void PerformWaveAttack()
+    public void PerformWaveAttack()
     {
         // Instantiate the wave prefab
         GameObject wave = Instantiate(WavePrefab, attackpo.position, Quaternion.identity);
