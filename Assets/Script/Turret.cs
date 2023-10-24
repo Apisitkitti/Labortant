@@ -6,7 +6,7 @@ public class Turret : MonoBehaviour
     public Transform firePoint;
     public float fireRate = 1.0f;
     private float nextFireTime = 0.0f;
-
+    public float thrust = 20.0f;
     void Update()
     {
         // Check if it's time to fire again
@@ -33,11 +33,11 @@ public class Turret : MonoBehaviour
         //unfreeze PositionY
         rb.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
         // Add force to the bullet (adjust the force as needed)
-        rb.AddForce(firePoint.up * 20.0f, ForceMode2D.Impulse);
+        rb.AddForce(firePoint.up * thrust, ForceMode2D.Impulse);
     }
     else
     {
-        rb.AddForce(firePoint.up * 20.0f, ForceMode2D.Impulse);
+        rb.AddForce(firePoint.up * thrust, ForceMode2D.Impulse);
     }
 
     
