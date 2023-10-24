@@ -710,7 +710,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 82986980}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389d589dc8cda7d47910a0a12b8999ca, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -954,7 +954,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 85922199}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389d589dc8cda7d47910a0a12b8999ca, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1366,7 +1366,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 109923489}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389d589dc8cda7d47910a0a12b8999ca, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1737,7 +1737,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 6.1, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2954,7 +2954,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 303294957}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389d589dc8cda7d47910a0a12b8999ca, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -6845,7 +6845,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 885360893}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389d589dc8cda7d47910a0a12b8999ca, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -7810,6 +7810,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5235915480414529092, guid: 2c06490002de7d14e9573a85aa7be73b, type: 3}
   firePoint: {fileID: 1435901412}
   fireRate: 0.5
+  thrust: 20
 --- !u!4 &973424254
 Transform:
   m_ObjectHideFlags: 0
@@ -7918,82 +7919,82 @@ MonoBehaviour:
   - position: {x: -12.327268, y: 0.2251904, z: 0}
     color: {r: 0, g: 0, b: 0, a: 1}
     uv: {x: 0, y: 0}
-  - position: {x: -12.5247, y: -0.2093, z: 0}
+  - position: {x: -12.5312, y: -0.2083, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.5151, y: -0.2704, z: 0}
+  - position: {x: -12.5236, y: -0.2696, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.4872, y: -0.3255, z: 0}
+  - position: {x: -12.4976, y: -0.3257, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.4439, y: -0.3696, z: 0}
+  - position: {x: -12.4558, y: -0.3711, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.3892, y: -0.3983, z: 0}
+  - position: {x: -12.4021, y: -0.4017, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.3247, y: -0.409, z: 0}
+  - position: {x: -12.3313, y: -0.4146, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.7396, y: -0.4129, z: 0}
+  - position: {x: 12.7298, y: -0.4135, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.8006, y: -0.4034, z: 0}
+  - position: {x: 12.7908, y: -0.404, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.8558, y: -0.3757, z: 0}
+  - position: {x: 12.8461, y: -0.3762, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.9, y: -0.3324, z: 0}
+  - position: {x: 12.8902, y: -0.333, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.9288, y: -0.2778, z: 0}
+  - position: {x: 12.919, y: -0.2783, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.9395, y: -0.2183, z: 0}
+  - position: {x: 12.9296, y: -0.2222, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.9518, y: 0.2382, z: 0}
+  - position: {x: 12.9502, y: 0.2531, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.9439, y: 0.2995, z: 0}
+  - position: {x: 12.9433, y: 0.3145, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.9177, y: 0.3554, z: 0}
+  - position: {x: 12.918, y: 0.3709, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.8757, y: 0.4007, z: 0}
+  - position: {x: 12.8767, y: 0.4169, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.8218, y: 0.431, z: 0}
+  - position: {x: 12.8234, y: 0.448, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 12.7517, y: 0.4436, z: 0}
+  - position: {x: 12.7502, y: 0.4618, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.3256, y: 0.4162, z: 0}
+  - position: {x: -12.3175, y: 0.4314, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.3866, y: 0.4066, z: 0}
+  - position: {x: -12.3786, y: 0.4218, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.4418, y: 0.3788, z: 0}
+  - position: {x: -12.4338, y: 0.394, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.4859, y: 0.3355, z: 0}
+  - position: {x: -12.4778, y: 0.3507, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.5147, y: 0.2808, z: 0}
+  - position: {x: -12.5066, y: 0.296, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -12.5254, y: 0.2159, z: 0}
+  - position: {x: -12.5172, y: 0.2377, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
   m_Triangles: 000003000100010003000200040008000800040008000900040009000a0004000a000b0004000b000c0004000c000d00040005000e0004000d000e0005000e000f0005000f001000050010001100050011001200050012001300050006001400050013001400060014001500060015001600060016001700060017001800060018001900060007001a00060019001a0007001a001b0007001b001c0007001c001d0007001d001e0007001e001f0008000400070008001f000700
   m_LocalBounds:
-    m_Center: {x: 0.21320009, y: 0.015349999, z: 0}
-    m_Extent: {x: 12.7386, y: 0.42825, z: 0}
+    m_Center: {x: 0.20949984, y: 0.023599997, z: 0}
+    m_Extent: {x: 12.7407, y: 0.4382, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -8578,7 +8579,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1023206378}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389d589dc8cda7d47910a0a12b8999ca, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -9751,7 +9752,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1131604341}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389d589dc8cda7d47910a0a12b8999ca, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -10173,7 +10174,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1147757404}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389d589dc8cda7d47910a0a12b8999ca, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -10306,7 +10307,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1151302202}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389d589dc8cda7d47910a0a12b8999ca, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -10931,7 +10932,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1209269424}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389d589dc8cda7d47910a0a12b8999ca, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -11153,7 +11154,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1235991542}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389d589dc8cda7d47910a0a12b8999ca, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -11286,7 +11287,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1236842247}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389d589dc8cda7d47910a0a12b8999ca, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -11503,7 +11504,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1264816758}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389d589dc8cda7d47910a0a12b8999ca, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -12994,7 +12995,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1342768172}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389d589dc8cda7d47910a0a12b8999ca, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -13518,7 +13519,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1406392146}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389d589dc8cda7d47910a0a12b8999ca, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -13763,6 +13764,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5235915480414529092, guid: 2c06490002de7d14e9573a85aa7be73b, type: 3}
   firePoint: {fileID: 1435901412}
   fireRate: 0.5
+  thrust: 20
 --- !u!1 &1443501153
 GameObject:
   m_ObjectHideFlags: 0
@@ -14422,6 +14424,7 @@ GameObject:
   - component: {fileID: 1559756241}
   - component: {fileID: 1559756240}
   - component: {fileID: 1559756242}
+  - component: {fileID: 1559756244}
   m_Layer: 0
   m_Name: ground
   m_TagString: Ground
@@ -35896,13 +35899,34 @@ TilemapCollider2D:
   m_GameObject: {fileID: 1559756238}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389d589dc8cda7d47910a0a12b8999ca, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
+--- !u!50 &1559756244
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559756238}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1560194008
 GameObject:
   m_ObjectHideFlags: 0
@@ -35950,6 +35974,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5235915480414529092, guid: 2c06490002de7d14e9573a85aa7be73b, type: 3}
   firePoint: {fileID: 1560194009}
   fireRate: 0.5
+  thrust: 20
 --- !u!1 &1585770387
 GameObject:
   m_ObjectHideFlags: 0
@@ -37729,7 +37754,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1796353560}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389d589dc8cda7d47910a0a12b8999ca, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -38237,6 +38262,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5235915480414529092, guid: 2c06490002de7d14e9573a85aa7be73b, type: 3}
   firePoint: {fileID: 1560194009}
   fireRate: 0.5
+  thrust: 20
 --- !u!4 &1844188077
 Transform:
   m_ObjectHideFlags: 0
@@ -38558,7 +38584,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1877698338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40392,7 +40418,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2078985012}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 389d589dc8cda7d47910a0a12b8999ca, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -41032,13 +41058,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8698798183781975571, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 1369744584}
-    - target: {fileID: 8698798183781975571, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: enemy.Array.size
-      value: 2
+    - target: {fileID: 4505007274223114045, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
+      propertyPath: dashingTime
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 8698798183781975571, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
       propertyPath: enemy.Array.data[0]
