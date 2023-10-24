@@ -20,11 +20,26 @@ public class Turret : MonoBehaviour
     }
 
     void Shoot()
+{
+    // Instantiate a bullet at the fire point
+    GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+    // Get the Rigidbody2D component
+    Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+
+    // if transform rotation z = 0 || 180,-180 
+    if(Mathf.Approximately(firePoint.rotation.eulerAngles.z, 0.0f)||Mathf.Approximately(firePoint.rotation.eulerAngles.z, 180.0f) )
     {
-        // Instantiate a bullet at the fire point
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        //unfreeze PositionY
+        rb.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
         // Add force to the bullet (adjust the force as needed)
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * 10.0f, ForceMode2D.Impulse);
+        rb.AddForce(firePoint.up * 20.0f, ForceMode2D.Impulse);
     }
+    else
+    {
+        rb.AddForce(firePoint.up * 20.0f, ForceMode2D.Impulse);
+    }
+
+    
+}
 }
