@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
   [SerializeField] BloodSkill mega_attack;
 
   private bool isInvincible = false;
+  private bool isMegaAttackActive = false;
 
   
   void Start()
@@ -29,18 +30,27 @@ public class Player : MonoBehaviour
   }
 
   void Update()
-  {
-    Hp();
-    if(Input.GetKeyDown(KeyCode.Q)&& Health>=30)
     {
-      ActivateInvincibility(invincibilityDuration);
+        Hp();
+        if (Input.GetKeyDown(KeyCode.Q) && Health >= 30)
+        {
+            ActivateInvincibility(invincibilityDuration);
+        }
+        if (Input.GetKeyDown(KeyCode.E) && Health >= 50 && !isMegaAttackActive)
+        {
+            ActivateMegaAttack();
+        }
     }
-     if(Input.GetKeyDown(KeyCode.E)&& Health>=50)
+    private void ActivateMegaAttack()
     {
-      mega_attack.AttackUpGrade();
+        mega_attack.AttackUpGrade();
+        isMegaAttackActive = true;
     }
-    
-  }
+
+    public void EndMegaAttack()
+    {
+        isMegaAttackActive = false;
+    }
   public void ActivateInvincibility(float duration)
 {
     if (!isInvincible)

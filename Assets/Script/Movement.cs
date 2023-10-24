@@ -45,8 +45,8 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
+        horizontal = Input.GetAxis("Horizontal");
+        vertical = Input.GetAxis("Vertical");
 
             if(isDashing)
             {
@@ -74,7 +74,7 @@ public class Movement : MonoBehaviour
                 rb.velocity -= Gravity*fallMultiplier*Time.deltaTime;
                 anim.SetBool("Jump",false);
             }
-            if(Input.GetMouseButtonDown(1)&& canDash)
+            if(Input.GetMouseButtonDown(1)&& canDash || Input.GetKeyDown(KeyCode.LeftShift))
             {
                 StartCoroutine(Dash());
                 Debug.Log("dash");
@@ -107,7 +107,7 @@ public class Movement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.tag == "Ground" || col.gameObject.tag == "Platform" || col.gameObject.tag == "Spike")
+        if(col.gameObject.tag == "Ground" || col.gameObject.tag == "Platform" || col.gameObject.tag == "Spike"|| col.gameObject.tag == "enemy")
         {
            groundcheck = true; 
            speed = currentSpeed;
