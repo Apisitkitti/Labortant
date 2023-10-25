@@ -21,6 +21,7 @@ public class Movement : MonoBehaviour
   private float vertical;
   private bool groundcheck;
   private int jump = 0;
+  private bool isWallSliding;
 
 
   Vector2 Gravity;
@@ -118,6 +119,22 @@ public class Movement : MonoBehaviour
     {
         wallJumpCounter -= Time.deltaTime;
     }
+    if (isTouchingWall && rb.velocity.y < 0 && !groundcheck && !isDashing)
+    {
+        isWallSliding = true;
+        anim.SetBool("Jump", false);
+    }
+    else
+    {
+        isWallSliding = false;
+    }
+
+    // Handle wall sliding effect
+    if (isWallSliding)
+    {
+        // Apply a custom sliding behavior here, e.g., reduce falling speed
+        rb.velocity = new Vector2(rb.velocity.x, -1f);
+    }
     Flip();
 
 
@@ -155,8 +172,11 @@ public class Movement : MonoBehaviour
 {
     if (wallJumpCounter > 0)
     {
+        // Determine the direction of the wall jump based on player's facing direction
+        wallJumpingDirection = isFacingRight ? -1f : 1f;
+
         // Perform wall jump
-        Vector2 jumpDirection = new Vector2(wallJumpingDirection * -transform.localScale.x, 1f);
+        Vector2 jumpDirection = new Vector2(wallJumpingDirection * transform.localScale.x, 1f);
         rb.velocity = wallJumpingPower * jumpDirection;
         anim.SetBool("Jump", true);
         groundcheck = false;
@@ -166,6 +186,7 @@ public class Movement : MonoBehaviour
         StartCoroutine(WallJumpCooldown());
     }
 }
+
 private IEnumerator WallJumpCooldown()
 {
     yield return new WaitForSeconds(wallJumpCooldown);
