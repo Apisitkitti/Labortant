@@ -11,8 +11,7 @@ public class Goalmap2 : MonoBehaviour
     if(col.gameObject.tag == "Player")
     {
       Destroy(Player);
-       Win.SetActive(true);
-     
+      Win.SetActive(true);
    }
 
   }

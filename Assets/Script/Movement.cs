@@ -53,12 +53,10 @@ public class Movement : MonoBehaviour
   private float wallJumpingTime = 0.2f;
   private float wallJumpingCounter;
   private float wallJumpingDuration = 0.4f;
-  private Vector2 wallJumpingPower = new Vector2(8f, 16f);
+  [SerializeField]private Vector2 wallJumpingPower = new Vector2(8f, 16f);
 
 
   [Header("WallSLide")]
-  private bool isWallSlide;
-  private float WallSlidingSpeed = 2f;
   [SerializeField] private Transform wallCheck;
   [SerializeField] private LayerMask wallLayer;
   Rigidbody2D rb;
@@ -100,7 +98,7 @@ public class Movement : MonoBehaviour
       rb.velocity -= Gravity * fallMultiplier * Time.deltaTime;
       anim.SetBool("Jump", false);
     }
-    if (Input.GetMouseButtonDown(1) && canDash || Input.GetKeyDown(KeyCode.LeftShift))
+    if (Input.GetMouseButtonDown(1) && canDash || Input.GetKeyDown(KeyCode.LeftShift )&& canDash)
     {
       StartCoroutine(Dash());
       Debug.Log("dash");

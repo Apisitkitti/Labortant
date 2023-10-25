@@ -10,8 +10,21 @@ public class WaveBehavior : MonoBehaviour
 
     void Start()
     {
-        // Set the initial movement direction based on the speed
-        moveDirection = (speed > 0) ? Vector3.right : Vector3.left;
+     Transform playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+     Vector3 localScale = transform.localScale;
+     if(playerTransform.localScale.x <0)
+     {
+       moveDirection = Vector3.left;
+       localScale.x *= -1f;
+        transform.localScale = localScale;
+     }  
+     else
+     {
+      moveDirection = Vector3.right;
+      localScale.x *= 1f;
+       transform.localScale = localScale;
+     }
+  
     }
 
     void Update()
