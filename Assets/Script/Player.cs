@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
   public HealthBar healthBar;
   public GameObject button;
   public int currentHealth;
-
+  public Animator anim;
   public SpriteRenderer spriteRenderer;
   public float Color_Transition = 1f;
   public float invincibilityDuration = 5f;
@@ -85,8 +85,10 @@ private IEnumerator InvincibilityCoroutine(float duration)
 
   private IEnumerator Damage()
   {
+    anim.SetBool("Hurt",true);
     spriteRenderer.color = Color.red;
     yield return new WaitForSeconds(Color_Transition);
+    anim.SetBool("Hurt",false);
     spriteRenderer.color = Color.white;
   }
   void Hp()

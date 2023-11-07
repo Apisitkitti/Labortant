@@ -205,6 +205,7 @@ private IEnumerator WallJumpCooldown()
   {
     canDash = false;
     isDashing = true;
+    anim.SetBool("dash",true);
     float originalGravity = rb.gravityScale;
     rb.gravityScale = 0f;
     rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
@@ -213,6 +214,7 @@ private IEnumerator WallJumpCooldown()
     tr.emitting = false;
     rb.gravityScale = originalGravity;
     isDashing = false;
+     anim.SetBool("dash",false);
     yield return new WaitForSeconds(dashingCooldown);
     canDash = true;
   }

@@ -30,7 +30,7 @@ public class EnemyAttribute : MonoBehaviour
  private IEnumerator Damage()
 {
     Color startColor = spriteRenderer.color;
-    Color endColor = Color.blue;
+    Color endColor = Color.black;
     float elapsedTime = 0f;
 
     while (elapsedTime < Color_Transition)
@@ -40,7 +40,8 @@ public class EnemyAttribute : MonoBehaviour
         yield return null;
     }
 
-    spriteRenderer.color = Color.red; // Set the final color to red
+    spriteRenderer.color = Color.black; // Set the final color to red
+    
 }
 
 
