@@ -29,20 +29,11 @@ public class EnemyAttribute : MonoBehaviour
 
  private IEnumerator Damage()
 {
-    Color startColor = spriteRenderer.color;
-    Color endColor = Color.black;
-    float elapsedTime = 0f;
-
-    while (elapsedTime < Color_Transition)
-    {
-        spriteRenderer.color = Color.Lerp(startColor, endColor, elapsedTime / Color_Transition);
-        elapsedTime += Time.deltaTime;
-        yield return null;
-    }
-
-    spriteRenderer.color = Color.black; // Set the final color to red
+    spriteRenderer.color = Color.red;
+    yield return new WaitForSeconds(Color_Transition-0.5f);
+    spriteRenderer.color = new Color(0.8784314f,0,1,1); // Set the final color to red
     
-}
+} 
 
 
   private void ApplyKnockback(Vector2 knockbackDirection)
