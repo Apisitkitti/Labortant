@@ -18,9 +18,7 @@ public class Player : MonoBehaviour
   public float invincibilityDuration = 5f;
   [SerializeField] TMP_Text Hp_text;
   [SerializeField] GameObject Lose;
-  [SerializeField] BloodSkill mega_attack;
   [SerializeField] Invincible immortal;
-  private bool immortal_stat;
 
  
   private bool isMegaAttackActive = false;
@@ -36,25 +34,8 @@ public class Player : MonoBehaviour
   void Update()
     {
         Hp();
-        immortal_stat = immortal.isInvincible;
-        if (Input.GetKeyDown(KeyCode.E) && Health >= 50 && !isMegaAttackActive)
-        {
-            ActivateMegaAttack();
-        }
-    }
-    private void ActivateMegaAttack()
-    {
-        mega_attack.AttackUpGrade();
-        isMegaAttackActive = true;
-    }
-
-    public void EndMegaAttack()
-    {
-        isMegaAttackActive = false;
     }
   
-
-
   public void TakeDam(int damage)
 {
     if (!immortal.isInvincible)
@@ -87,9 +68,5 @@ public class Player : MonoBehaviour
     {
       button.SetActive(false);
     }
-  }
-  public void invincibility()
-  {
-    immortal.ActivateInvincibility(invincibilityDuration);
   }
 }
