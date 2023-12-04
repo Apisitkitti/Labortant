@@ -69,4 +69,6 @@ public class Player : MonoBehaviour
       button.SetActive(false);
     }
   }
+ 
+
 }
