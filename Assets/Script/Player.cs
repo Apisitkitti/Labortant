@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Mono.Cecil;
 
 public class Player : MonoBehaviour
 {
@@ -18,24 +19,24 @@ public class Player : MonoBehaviour
   [SerializeField] TMP_Text Hp_text;
   [SerializeField] GameObject Lose;
   [SerializeField] BloodSkill mega_attack;
+  [SerializeField] Invincible immortal;
+  private bool immortal_stat;
 
-  private bool isInvincible = false;
+ 
   private bool isMegaAttackActive = false;
 
   
   void Start()
   {
     currentHealth = Health;
-    healthBar.SetMaxHealth(Health);    
+    healthBar.SetMaxHealth(Health);
+
   }
 
   void Update()
     {
         Hp();
-        if (Input.GetKeyDown(KeyCode.Q) && Health >= 30)
-        {
-            ActivateInvincibility(invincibilityDuration);
-        }
+        immortal_stat = immortal.isInvincible;
         if (Input.GetKeyDown(KeyCode.E) && Health >= 50 && !isMegaAttackActive)
         {
             ActivateMegaAttack();
@@ -51,30 +52,12 @@ public class Player : MonoBehaviour
     {
         isMegaAttackActive = false;
     }
-  public void ActivateInvincibility(float duration)
-{
-    if (!isInvincible)
-    {
-        isInvincible = true;
-        StartCoroutine(InvincibilityCoroutine(duration));
-    }
-}
+  
 
-private IEnumerator InvincibilityCoroutine(float duration)
-{
-    // Add visual/audio effects for invincibility if desired
-    spriteRenderer.color = Color.green; // Set player color to indicate invincibility
-
-    yield return new WaitForSeconds(duration);
-
-    // Reset invincibility state
-    isInvincible = false;
-    spriteRenderer.color = Color.white; // Reset player color
-}
 
   public void TakeDam(int damage)
 {
-    if (!isInvincible)
+    if (!immortal.isInvincible)
     {
         Health -= damage;
         currentHealth -= damage;
@@ -107,6 +90,6 @@ private IEnumerator InvincibilityCoroutine(float duration)
   }
   public void invincibility()
   {
-    ActivateInvincibility(invincibilityDuration);
+    immortal.ActivateInvincibility(invincibilityDuration);
   }
 }

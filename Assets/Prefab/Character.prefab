@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 4505007274223114034}
   - component: {fileID: 4505007273403947968}
   - component: {fileID: 4505007273403947977}
+  - component: {fileID: 4105339926515111886}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -360,11 +361,13 @@ MonoBehaviour:
   jumpboost: 515
   forward: 5
   anim: {fileID: 1504526157}
+  wallJumpCooldown: 1
   tr: {fileID: 4505007272838928780}
   fallMultiplier: 2.25
   dashingPower: 30
   dashingTime: 0.01
   dashingCooldown: 1.25
+  wallJumpingPower: {x: 8, y: 16}
   wallCheck: {fileID: 1237126224}
   wallLayer:
     serializedVersion: 2
@@ -462,12 +465,14 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   button: {fileID: 0}
   currentHealth: 0
+  anim: {fileID: 0}
   spriteRenderer: {fileID: 4505007272838928779}
   Color_Transition: 0.5
   invincibilityDuration: 2
   Hp_text: {fileID: 0}
   Lose: {fileID: 0}
   mega_attack: {fileID: 4505007273403947968}
+  immortal: {fileID: 0}
 --- !u!114 &4505007273403947968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,6 +503,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WavePrefab: {fileID: 5061297089575290726, guid: 6ad54b0de7c7be8428c9df2ad9a2f16d, type: 3}
   attackpo: {fileID: 1723526282}
+--- !u!114 &4105339926515111886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4505007274223114043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a935ebe850004684891127c53edb67c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4505007274223114034}
+  imageCooldown: {fileID: 0}
+  textCooldown: {fileID: 0}
+  frame: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  isInvincible: 0
 --- !u!1001 &4505007273708994934
 PrefabInstance:
   m_ObjectHideFlags: 0
