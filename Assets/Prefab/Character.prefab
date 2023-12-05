@@ -291,7 +291,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAttack: 0
-  wave: {fileID: 4505007273403947977}
   damage: 12
   attackPoint: {fileID: 1723526282}
   attackRange: 0.3
@@ -301,6 +300,7 @@ MonoBehaviour:
     m_Bits: 8
   anim: {fileID: 1504526157}
   knockbackForce: 1000
+  megaAttackScript: {fileID: 4505007273403947982}
 --- !u!1 &4505007274223114043
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +321,7 @@ GameObject:
   - component: {fileID: 4105339926515111886}
   - component: {fileID: 4505007273403947965}
   - component: {fileID: 4505007273403947972}
+  - component: {fileID: 4505007273403947982}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -473,7 +474,6 @@ MonoBehaviour:
   invincibilityDuration: 2
   Hp_text: {fileID: 0}
   Lose: {fileID: 0}
-  mega_attack: {fileID: 4505007273403947968}
   immortal: {fileID: 4105339926515111886}
 --- !u!114 &4505007273403947968
 MonoBehaviour:
@@ -505,6 +505,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WavePrefab: {fileID: 5061297089575290726, guid: 6ad54b0de7c7be8428c9df2ad9a2f16d, type: 3}
   attackpo: {fileID: 1723526282}
+  imageCooldown: {fileID: 0}
+  textCooldown: {fileID: 0}
+  frame: {fileID: 0}
+  WaveCooldown: 10
 --- !u!114 &4105339926515111886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -597,6 +601,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4505007273403947982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4505007274223114043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5422b362fc7a54fb33960e3220413c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackScript: {fileID: 1504526158}
+  megaAttackKey: 101
+  buffDamage: 2
+  isMegaAttackActive: 0
+  player: {fileID: 4505007274223114034}
+  cooldownDuration: 10
+  timeToHitEnemy: 5
+  hasHealedDuringMegaAttack: 0
+  imageCooldown: {fileID: 0}
+  textCooldown: {fileID: 0}
+  frame: {fileID: 0}
 --- !u!1001 &4505007273708994934
 PrefabInstance:
   m_ObjectHideFlags: 0
