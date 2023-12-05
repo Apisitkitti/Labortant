@@ -75,6 +75,7 @@ public class Player : MonoBehaviour
   {
     currentHealth = 100;
   }
+  Health = currentHealth;
   healthBar.SetHealth(currentHealth);
  }
 

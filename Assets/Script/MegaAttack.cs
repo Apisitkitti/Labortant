@@ -9,10 +9,14 @@ public class MegaAttack : MonoBehaviour
     public int Buffdam = 2;
     public bool isMegaAttackActive = false;
     bool isCooldown = false;
+    bool isTimerRunning = false;
+    float timer = 0f;
     public Player player; // Reference to the Player script
     public float cooldownDuration = 10f; // Cooldown duration in seconds
-    public bool HasHealedDuringMegaAttack  = false;
+    public float timeToHitEnemy = 5f; // Time limit to hit an enemy
+    public bool HasHealedDuringMegaAttack = false;
     private int Originaldam;
+
     void Start()
     {
         attackScript = GetComponentInChildren<Attack>();
@@ -26,9 +30,26 @@ public class MegaAttack : MonoBehaviour
 
     void Update()
     {
+        if(player.currentHealth < 50)
+        {
+            return;
+        }
         if (Input.GetKeyDown(megaAttackKey) && !isCooldown)
         {
             ToggleMegaAttack();
+        }
+
+        if (isTimerRunning)
+        {
+            timer += Time.deltaTime;
+            if (timer >= timeToHitEnemy)
+            {
+                isTimerRunning = false;
+                if (isMegaAttackActive)
+                {
+                    DeactivateMegaAttack();
+                }
+            }
         }
     }
 
@@ -42,8 +63,10 @@ public class MegaAttack : MonoBehaviour
             Debug.Log("Mega Attack Activated! Damage multiplied.");
             Debug.Log("Damage now = " + attackScript.damage);
             StartCoroutine(StartCooldown());
-             // Reset the flag for healing during the mega attack
-           HasHealedDuringMegaAttack = false;
+            isTimerRunning = true;
+            timer = 0f;
+            // Reset the flag for healing during the mega attack
+            HasHealedDuringMegaAttack = false;
         }
     }
 
@@ -54,7 +77,16 @@ public class MegaAttack : MonoBehaviour
         ResetDamageAttack();
         isCooldown = false;
         isMegaAttackActive = false;
-       Debug.Log("Cooldown Success =  " + attackScript.damage);
+        Debug.Log("Cooldown Success =  " + attackScript.damage);
+    }
+
+    void DeactivateMegaAttack()
+    {
+        attackScript.damage = Originaldam;
+        Debug.Log("Buff Time Out.");
+        Debug.Log("Damage reset = " + attackScript.damage);
+        isMegaAttackActive = false;
+        isTimerRunning = false;
     }
 
     public void ResetDamageAttack()
@@ -62,9 +94,6 @@ public class MegaAttack : MonoBehaviour
         attackScript.damage = Originaldam;
         Debug.Log("Mega Attack Deactivated! Damage returned to normal.");
         Debug.Log("Damage reset = " + attackScript.damage);
-        
-       
     }
-  
- 
 }
+    
