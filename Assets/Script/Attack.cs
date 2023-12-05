@@ -15,7 +15,7 @@ public class Attack : MonoBehaviour
     public LayerMask enemyLayer;
     public Animator anim;
     public float knockbackForce = 5f;
-
+    public MegaAttack megaAttackScript;
 
     void Update()
 {
@@ -42,16 +42,23 @@ public class Attack : MonoBehaviour
 
        
 
-    void AttackMode()
-    {
-        anim.SetTrigger("attack");
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
-        foreach (Collider2D enemy in hitEnemies)
+        void AttackMode()
         {
-            Vector2 knockbackDirection = (enemy.transform.position - transform.position).normalized;
-            enemy.GetComponent<EnemyAttribute>().TakeDam(damage, knockbackDirection);
-        }  
-    }
+            anim.SetTrigger("attack");
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                Vector2 knockbackDirection = (enemy.transform.position - transform.position).normalized;
+                enemy.GetComponent<EnemyAttribute>().TakeDam(damage, knockbackDirection);
+                if (megaAttackScript != null && megaAttackScript.isMegaAttackActive && !megaAttackScript.HasHealedDuringMegaAttack)
+        {
+            megaAttackScript.player.HealPlayer(20);
+            megaAttackScript.HasHealedDuringMegaAttack = true;
+            // Reset the damage in MegaAttack script
+            megaAttackScript.ResetDamageAttack();
+        }
+            }  
+        }
 
     void OnDrawGizmosSelected()
     {

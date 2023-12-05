@@ -69,4 +69,14 @@ public class Player : MonoBehaviour
       button.SetActive(false);
     }
   }
+ public void HealPlayer(int healAmount){
+  currentHealth +=healAmount;
+  if(currentHealth > 100)
+  {
+    currentHealth = 100;
+  }
+  Health = currentHealth;
+  healthBar.SetHealth(currentHealth);
+ }
+
 }
