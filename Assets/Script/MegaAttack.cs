@@ -11,7 +11,8 @@ public class MegaAttack : MonoBehaviour
     bool isCooldown = false;
     public Player player; // Reference to the Player script
     public float cooldownDuration = 10f; // Cooldown duration in seconds
-    
+    public bool HasHealedDuringMegaAttack  = false;
+    private int Originaldam;
     void Start()
     {
         attackScript = GetComponentInChildren<Attack>();
@@ -20,6 +21,7 @@ public class MegaAttack : MonoBehaviour
             Debug.LogError("Attack script not found in children!");
         }
         Debug.Log("Damage Before = " + attackScript.damage);
+        Originaldam = attackScript.damage;
     }
 
     void Update()
@@ -40,6 +42,8 @@ public class MegaAttack : MonoBehaviour
             Debug.Log("Mega Attack Activated! Damage multiplied.");
             Debug.Log("Damage now = " + attackScript.damage);
             StartCoroutine(StartCooldown());
+             // Reset the flag for healing during the mega attack
+           HasHealedDuringMegaAttack = false;
         }
     }
 
@@ -50,12 +54,12 @@ public class MegaAttack : MonoBehaviour
         ResetDamageAttack();
         isCooldown = false;
         isMegaAttackActive = false;
+       Debug.Log("Cooldown Success =  " + attackScript.damage);
     }
 
     public void ResetDamageAttack()
     {
-        
-        attackScript.damage = 12;
+        attackScript.damage = Originaldam;
         Debug.Log("Mega Attack Deactivated! Damage returned to normal.");
         Debug.Log("Damage reset = " + attackScript.damage);
         

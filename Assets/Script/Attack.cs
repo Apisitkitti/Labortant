@@ -54,12 +54,13 @@ public class Attack : MonoBehaviour
             {
                 Vector2 knockbackDirection = (enemy.transform.position - transform.position).normalized;
                 enemy.GetComponent<EnemyAttribute>().TakeDam(damage, knockbackDirection);
-                 if (megaAttackScript != null && megaAttackScript.isMegaAttackActive == true )
-                {
-                    
-                     megaAttackScript.ResetDamageAttack();
-                     
-                }
+                if (megaAttackScript != null && megaAttackScript.isMegaAttackActive && !megaAttackScript.HasHealedDuringMegaAttack)
+        {
+            megaAttackScript.player.HealPlayer(20);
+            megaAttackScript.HasHealedDuringMegaAttack = true;
+            // Reset the damage in MegaAttack script
+            megaAttackScript.ResetDamageAttack();
+        }
             }  
         }
 
