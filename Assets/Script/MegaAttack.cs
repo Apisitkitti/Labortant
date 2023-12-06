@@ -86,7 +86,7 @@ public class MegaAttack : MonoBehaviour
     {
         isCooldown = true;
         float cooldownTimer = cooldownDuration;
-
+        textCooldown.gameObject.SetActive(true);
         while (cooldownTimer > 0f)
         {
             textCooldown.text = Mathf.RoundToInt(cooldownTimer).ToString();
