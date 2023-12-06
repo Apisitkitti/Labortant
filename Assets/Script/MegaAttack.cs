@@ -41,6 +41,7 @@ public class MegaAttack : MonoBehaviour
     {
         if (player.currentHealth < 50)
         {
+
             return;
         }
 

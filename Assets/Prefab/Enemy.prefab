@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 7636089034429986809}
   - component: {fileID: -2330349758180844306}
   - component: {fileID: 490631991}
-  - component: {fileID: 490631990}
   - component: {fileID: 490631989}
   - component: {fileID: 490631993}
   m_Layer: 3
@@ -54,8 +53,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.005431175, y: -0.8201933}
-  m_Size: {x: 0.96713066, y: 1.9885769}
+  m_Offset: {x: -0.08293988, y: -0.89768606}
+  m_Size: {x: 1.8383689, y: 2.1435626}
   m_Direction: 0
 --- !u!114 &1369744571
 MonoBehaviour:
@@ -72,7 +71,7 @@ MonoBehaviour:
   target: {fileID: 0}
   knockbackDuration: 0.5
   knockbackForce: 100
-  moveSpeed: 3
+  moveSpeed: 1
   chaseRange: 7
 --- !u!114 &1369744574
 MonoBehaviour:
@@ -86,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af2705021ff27548b74609104bf6f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 1
   player: {fileID: 0}
 --- !u!114 &7636089034429986809
 MonoBehaviour:
@@ -101,9 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 100
-  spriteRenderer: {fileID: -2330349758180844306}
+  spriteRenderer: {fileID: 3893787250549932809}
   Color_Transition: 1
-  KnockbackForce: 5
+  KnockbackForce: 20
 --- !u!212 &-2330349758180844306
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -177,22 +176,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &490631990
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3893787249847409399}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.005431175, y: -0.8201933}
-  m_Size: {x: 0.96713066, y: 1.9885769}
-  m_Direction: 0
 --- !u!114 &490631989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  knockbackDuration: 0.5
+  knockbackDuration: 3
   knockbackForce: 100
   moveSpeed: 3
   chaseRange: 7
@@ -234,6 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3893787250549932810}
   - component: {fileID: 3893787250549932809}
+  - component: {fileID: 1552696787}
   m_Layer: 3
   m_Name: Capsule
   m_TagString: Untagged
@@ -249,7 +233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3893787250549932811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.82, z: 10.27259}
+  m_LocalPosition: {x: 0.01, y: -1.03, z: 10.27259}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -297,8 +281,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.8784314, g: 0, b: 1, a: 1}
+  m_Sprite: {fileID: 487939796, guid: fe04813cfd7277242ba8cce63e0b87db, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -308,3 +292,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1552696787
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3893787250549932811}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bf731f67bd29e3a4e87eae93af77076e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

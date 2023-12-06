@@ -10,6 +10,7 @@ public class Tetsuga : MonoBehaviour
     [SerializeField] private Image imageCooldown;
     [SerializeField] private TMP_Text textCooldown;
     [SerializeField] private Image frame;
+    [SerializeField] private Player player;
     private bool isCooldown = false;
     [SerializeField] private float WaveCooldown = 10f;
 
@@ -21,6 +22,10 @@ public class Tetsuga : MonoBehaviour
 
     void Update()
     {
+        if(player.Health < 80)
+        {
+          return;
+        }
         if (Input.GetKeyDown(KeyCode.R) && !isCooldown)
         {
             PerformWaveAttack();

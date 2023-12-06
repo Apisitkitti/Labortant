@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &140858339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 140858340}
+  m_Layer: 0
+  m_Name: attackpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &140858340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140858339}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.13, y: -0.057, z: 0.031492088}
+  m_LocalScale: {x: 0.12567471, y: 0.13017641, z: 0.4102901}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4505007272838928778}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1237126223
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1723526282}
   m_Layer: 0
-  m_Name: attackPoint
+  m_Name: SkillPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,7 +86,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723526281}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.48, y: -0.7, z: 0}
+  m_LocalPosition: {x: 2.572, y: -0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -93,7 +124,8 @@ Transform:
   m_LocalPosition: {x: 0.3, y: -0.86, z: -0.07675567}
   m_LocalScale: {x: 7.957053, y: 7.681882, z: 2.4373}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 140858340}
   m_Father: {fileID: 4505007274223114044}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -292,8 +324,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentAttack: 0
   damage: 12
-  attackPoint: {fileID: 1723526282}
-  attackRange: 0.3
+  attackPoint: {fileID: 140858340}
+  attackRange: 0.73
   attackTime: 0.8
   enemyLayer:
     serializedVersion: 2
@@ -316,7 +348,6 @@ GameObject:
   - component: {fileID: 4505007274223114032}
   - component: {fileID: 4505007274223114033}
   - component: {fileID: 4505007274223114034}
-  - component: {fileID: 4505007273403947968}
   - component: {fileID: 4505007273403947977}
   - component: {fileID: 4105339926515111886}
   - component: {fileID: 4505007273403947965}
@@ -472,25 +503,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4505007272838928779}
   Color_Transition: 0.5
   invincibilityDuration: 2
-  Hp_text: {fileID: 0}
   Lose: {fileID: 0}
   immortal: {fileID: 4105339926515111886}
---- !u!114 &4505007273403947968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4505007274223114043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc01b71013564a949a14ecfb9a178f19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  atk: {fileID: 1504526158}
-  player: {fileID: 4505007274223114034}
-  Hp_regain: 20
-  skill_dam: 38
 --- !u!114 &4505007273403947977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,7 +604,7 @@ Animator:
   m_GameObject: {fileID: 4505007274223114043}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ab9e352f387ea2447bdb6411482426eb, type: 2}
+  m_Controller: {fileID: 9100000, guid: d5a69ff2a8efa374b80176e3135d2571, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

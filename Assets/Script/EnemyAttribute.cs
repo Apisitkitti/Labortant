@@ -31,7 +31,7 @@ public class EnemyAttribute : MonoBehaviour
 {
     spriteRenderer.color = Color.red;
     yield return new WaitForSeconds(Color_Transition-0.5f);
-    spriteRenderer.color = new Color(0.8784314f,0,1,1); // Set the final color to red
+    spriteRenderer.color = Color.white; // Set the final color to red
     
 } 
 

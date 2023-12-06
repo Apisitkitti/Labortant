@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
   
   public int Health = 100;
   public HealthBar healthBar;
-  public GameObject button;
   public int currentHealth;
   public Animator anim;
   public SpriteRenderer spriteRenderer;
@@ -59,10 +58,6 @@ public class Player : MonoBehaviour
     {
       Destroy(gameObject);
       Lose.SetActive(true);
-    }
-    if(Health <= 30)
-    {
-      button.SetActive(false);
     }
   }
  public void HealPlayer(int healAmount){
