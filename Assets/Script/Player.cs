@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
   public SpriteRenderer spriteRenderer;
   public float Color_Transition = 1f;
   public float invincibilityDuration = 5f;
-  [SerializeField] TMP_Text Hp_text;
   [SerializeField] GameObject Lose;
   [SerializeField] Invincible immortal;
 
@@ -56,12 +55,10 @@ public class Player : MonoBehaviour
   }
   void Hp()
   {
-    Hp_text.text = "HP:  "+ Health;
     if(Health <= 0)
     {
       Destroy(gameObject);
       Lose.SetActive(true);
-      Hp_text.text = "HP:  "+ 0;
     }
     if(Health <= 30)
     {
