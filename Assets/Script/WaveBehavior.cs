@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class WaveBehavior : MonoBehaviour
 {
-    [SerializeField] List<Collider2D> enemy;
     public float speed = 5f;
     public int damage = 0;
     private Vector3 moveDirection;
@@ -31,6 +30,7 @@ public class WaveBehavior : MonoBehaviour
     {
         // Move the wave in the specified direction
         transform.Translate(moveDirection * Mathf.Abs(speed) * Time.deltaTime);
+         Destroy(gameObject, 2f);
     }
 
     void OnCollisionEnter2D(Collision2D col)
