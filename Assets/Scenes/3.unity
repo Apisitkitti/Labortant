@@ -26527,7 +26527,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 821414392}
   m_HandleRect: {fileID: 0}
@@ -31616,7 +31616,8 @@ PrefabInstance:
       propertyPath: wallJumpingPower.y
       value: 5.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4505007273403947968, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
 --- !u!4 &4505007273403947961 stripped
 Transform:
