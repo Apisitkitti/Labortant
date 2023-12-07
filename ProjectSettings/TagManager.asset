@@ -6,10 +6,11 @@ TagManager:
   tags:
   - Ground
   - Platform
-  - Spike
   - Dead
   - bullet
   - enemy
+  - Environment
+  - Trap
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - enemy
   - Water
   - UI
-  - map
-  - wall
+  - ground
+  - platform
   - 
   - 
   - 
@@ -46,7 +47,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: World
-    uniqueID: 3065488857
     locked: 0

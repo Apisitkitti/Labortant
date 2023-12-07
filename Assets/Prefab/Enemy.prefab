@@ -15,8 +15,6 @@ GameObject:
   - component: {fileID: 7636089034429986809}
   - component: {fileID: -2330349758180844306}
   - component: {fileID: 490631991}
-  - component: {fileID: 490631989}
-  - component: {fileID: 490631993}
   m_Layer: 3
   m_Name: Enemy
   m_TagString: enemy
@@ -85,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af2705021ff27548b74609104bf6f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 10
   player: {fileID: 0}
 --- !u!114 &7636089034429986809
 MonoBehaviour:
@@ -102,7 +100,7 @@ MonoBehaviour:
   Health: 100
   spriteRenderer: {fileID: 3893787250549932809}
   Color_Transition: 1
-  KnockbackForce: 20
+  KnockbackForce: 100
 --- !u!212 &-2330349758180844306
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -176,37 +174,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &490631989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3893787249847409399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2611c9e836ceb0e4eaaf1c879a4ffba1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  knockbackDuration: 3
-  knockbackForce: 100
-  moveSpeed: 3
-  chaseRange: 7
---- !u!114 &490631993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3893787249847409399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7af2705021ff27548b74609104bf6f70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  player: {fileID: 0}
 --- !u!1 &3893787250549932811
 GameObject:
   m_ObjectHideFlags: 0
