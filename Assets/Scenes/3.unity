@@ -4355,7 +4355,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1048527991}
         m_TargetAssemblyTypeName: RestartButton, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
@@ -15926,6 +15926,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1048527991 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1228000510849485618, guid: ee757f167452bfc45a3d13c284848988, type: 3}
+  m_PrefabInstance: {fileID: 1379348609}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3393b9efc54dd1c48a5303321693b0c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1056782369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17263,8 +17274,20 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3893787249847409398, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.65586764
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893787249847409398, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.65586764
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893787249847409398, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.65586764
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893787249847409398, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -80.4
+      value: -80.40001
       objectReference: {fileID: 0}
     - target: {fileID: 3893787249847409398, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17280,15 +17303,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3893787249847409398, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3893787249847409398, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3893787249847409398, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3893787249847409398, guid: 89d3c02d41fb47b4bbbe79ae027e5472, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -30171,7 +30194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1237126224, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.44
+      value: 0.557
       objectReference: {fileID: 0}
     - target: {fileID: 1723526282, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
       propertyPath: m_LocalPosition.x
