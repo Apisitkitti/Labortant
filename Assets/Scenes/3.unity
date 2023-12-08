@@ -13642,17 +13642,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &916344047 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1316439710055092250, guid: c44a1e07317449441a24ea922569063d, type: 3}
-  m_PrefabInstance: {fileID: 1690092248}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &917078587
 GameObject:
   m_ObjectHideFlags: 0
@@ -15289,17 +15278,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1021807512 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1316439711114402022, guid: c44a1e07317449441a24ea922569063d, type: 3}
-  m_PrefabInstance: {fileID: 1690092248}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1027657293
 GameObject:
   m_ObjectHideFlags: 0
@@ -16192,17 +16170,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1062133224 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1316439710030998802, guid: c44a1e07317449441a24ea922569063d, type: 3}
-  m_PrefabInstance: {fileID: 1690092248}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1074432672
 GameObject:
   m_ObjectHideFlags: 0
@@ -22869,11 +22836,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8244559241760653242, guid: 0b21250e3b1f26745baef236bfd5c5c2, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 60
+      value: 33.7706
       objectReference: {fileID: 0}
     - target: {fileID: 8244559241760653242, guid: 0b21250e3b1f26745baef236bfd5c5c2, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 60
+      value: 33.7706
       objectReference: {fileID: 0}
     - target: {fileID: 8244559241760653242, guid: 0b21250e3b1f26745baef236bfd5c5c2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22905,11 +22872,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8244559241760653242, guid: 0b21250e3b1f26745baef236bfd5c5c2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 128
+      value: 571.4
       objectReference: {fileID: 0}
     - target: {fileID: 8244559241760653242, guid: 0b21250e3b1f26745baef236bfd5c5c2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 266
+      value: 109.7
       objectReference: {fileID: 0}
     - target: {fileID: 8244559241760653242, guid: 0b21250e3b1f26745baef236bfd5c5c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -30348,7 +30315,7 @@ PrefabInstance:
     - target: {fileID: 4105339926515111886, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
       propertyPath: textCooldown
       value: 
-      objectReference: {fileID: 916344047}
+      objectReference: {fileID: 0}
     - target: {fileID: 4105339926515111886, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
       propertyPath: imageCooldown
       value: 
@@ -30372,7 +30339,7 @@ PrefabInstance:
     - target: {fileID: 4505007273403947977, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
       propertyPath: textCooldown
       value: 
-      objectReference: {fileID: 1021807512}
+      objectReference: {fileID: 0}
     - target: {fileID: 4505007273403947977, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
       propertyPath: imageCooldown
       value: 
@@ -30384,7 +30351,7 @@ PrefabInstance:
     - target: {fileID: 4505007273403947982, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
       propertyPath: textCooldown
       value: 
-      objectReference: {fileID: 1062133224}
+      objectReference: {fileID: 0}
     - target: {fileID: 4505007273403947982, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
       propertyPath: imageCooldown
       value: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e99d8db8f6706a34b8df9ad67548c4bb
+guid: f8894fd42b9da0e448fe536615059fcc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HP_UI_0
+      name: Rika01_SpSkill_effect1-Sheet_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 95
-        width: 31
-        height: 30
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30955ab3f6ef6a04aa2aa35125b98f69
-      internalID: 737102792
+      spriteID: cadd2171968a4314a8f6ae42dd2a70b9
+      internalID: 567743298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HP_UI_1
+      name: Rika01_SpSkill_effect1-Sheet_1
       rect:
         serializedVersion: 2
-        x: 57
-        y: 96
-        width: 29
-        height: 28
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f63cdf85b3ecf3c44bfdf229bdd638ec
-      internalID: -683996217
+      spriteID: 6e7c887b45d938943bd72671baa259fd
+      internalID: -1546900698
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HP_UI_3
+      name: Rika01_SpSkill_effect1-Sheet_2
       rect:
         serializedVersion: 2
-        x: 2
-        y: 47
-        width: 126
-        height: 44
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c93955a218831d4f907957ff86ff428
-      internalID: 1183072134
+      spriteID: 2c3832c26a1bf8642ac7a5650a845194
+      internalID: -1377847370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HP_UI_4
+      name: Rika01_SpSkill_effect1-Sheet_3
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1
-        width: 126
-        height: 44
+        x: 192
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01fd80d5b57e71142a5a042aefc5dd9c
-      internalID: 236224311
+      spriteID: 9fc5340b3c50b25488a839068945a307
+      internalID: -1521603722
       vertices: []
       indices: 
       edges: []
@@ -199,11 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HP_UI_0: 737102792
-      HP_UI_1: -683996217
-      HP_UI_2: -167990753
-      HP_UI_3: 1183072134
-      HP_UI_4: 236224311
+      Rika01_SpSkill_effect1-Sheet_0: 567743298
+      Rika01_SpSkill_effect1-Sheet_1: -1546900698
+      Rika01_SpSkill_effect1-Sheet_2: -1377847370
+      Rika01_SpSkill_effect1-Sheet_3: -1521603722
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

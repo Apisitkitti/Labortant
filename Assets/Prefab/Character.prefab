@@ -323,15 +323,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAttack: 0
-  damage: 12
+  damage: 10
   attackPoint: {fileID: 140858340}
-  attackRange: 0.73
+  attackRange: 0.75
   attackTime: 0.8
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
   anim: {fileID: 1504526157}
-  knockbackForce: 1000
+  knockbackForce: 200
   megaAttackScript: {fileID: 4505007273403947982}
 --- !u!1 &4505007274223114043
 GameObject:
@@ -607,8 +607,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackScript: {fileID: 1504526158}
-  megaAttackKey: 101
-  buffDamage: 2
+  megaAttackKey: 113
+  buffDamage: 3
   isMegaAttackActive: 0
   player: {fileID: 4505007274223114034}
   cooldownDuration: 10

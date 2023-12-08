@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5061297089575290731}
   - component: {fileID: 5061297089575290724}
   - component: {fileID: 5061297089575290725}
+  - component: {fileID: 7904367178270922808}
   m_Layer: 0
   m_Name: SP_attack
   m_TagString: Untagged
@@ -99,7 +100,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.6634655, y: 0.022150755}
+  m_Offset: {x: 0.7561283, y: 0.015259266}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3098488, y: 0.61263084}
+  m_Size: {x: 0.07831192, y: 0.466537}
   m_EdgeRadius: 0
 --- !u!114 &5061297089575290725
 MonoBehaviour:
@@ -126,3 +127,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   damage: 20
+--- !u!50 &7904367178270922808
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5061297089575290726}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
