@@ -1,13 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class Invincible : MonoBehaviour
 {
   [SerializeField] private Player player;
   [SerializeField] private Image imageCooldown;
-  [SerializeField] private TMP_Text textCooldown;
   [SerializeField] private Image frame;
   public SpriteRenderer spriteRenderer;
   public bool isInvincible = false;
@@ -18,7 +16,7 @@ public class Invincible : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-    textCooldown.gameObject.SetActive(false);
+   
     imageCooldown.fillAmount = 0.0f;
   }
 
@@ -51,17 +49,17 @@ public class Invincible : MonoBehaviour
     isCooldown = true;
     float cooldownTimer = invincibilityCooldown;
 
-    textCooldown.gameObject.SetActive(true);
+    
 
     while (cooldownTimer > 0f)
     {
-      textCooldown.text = Mathf.RoundToInt(cooldownTimer).ToString();
+
       imageCooldown.fillAmount = 1 - (cooldownTimer / invincibilityCooldown);
       yield return new WaitForSeconds(1f);
       cooldownTimer -= 1f;
     }
 
-    textCooldown.gameObject.SetActive(false);
+    
     imageCooldown.fillAmount = 0.0f;
     isCooldown = false;
   }

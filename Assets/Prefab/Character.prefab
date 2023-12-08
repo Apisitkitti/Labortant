@@ -401,6 +401,9 @@ MonoBehaviour:
   dashingTime: 0.15
   dashingCooldown: 1.25
   wallJumpingPower: {x: 8, y: 5.5}
+  imageCooldown: {fileID: 0}
+  frame: {fileID: 0}
+  dashCooldownFill: {fileID: 0}
   wallCheck: {fileID: 1237126224}
   wallLayer:
     serializedVersion: 2
@@ -439,8 +442,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.20531881, y: -2.046939}
-  m_Size: {x: 0.68616545, y: 0.12704057}
+  m_Offset: {x: -0.19946253, y: -2.0586534}
+  m_Size: {x: 0.7353598, y: 0.1317228}
   m_Direction: 1
 --- !u!61 &4505007274223114032
 BoxCollider2D:
@@ -518,7 +521,6 @@ MonoBehaviour:
   WavePrefab: {fileID: 5061297089575290726, guid: 6ad54b0de7c7be8428c9df2ad9a2f16d, type: 3}
   attackpo: {fileID: 1723526282}
   imageCooldown: {fileID: 0}
-  textCooldown: {fileID: 0}
   frame: {fileID: 0}
   player: {fileID: 4505007274223114034}
   WaveCooldown: 10
@@ -536,7 +538,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 4505007274223114034}
   imageCooldown: {fileID: 0}
-  textCooldown: {fileID: 0}
   frame: {fileID: 0}
   spriteRenderer: {fileID: 4505007272838928779}
   isInvincible: 0
@@ -614,7 +615,6 @@ MonoBehaviour:
   timeToHitEnemy: 5
   hasHealedDuringMegaAttack: 0
   imageCooldown: {fileID: 0}
-  textCooldown: {fileID: 0}
   frame: {fileID: 0}
 --- !u!1001 &4505007273708994934
 PrefabInstance:

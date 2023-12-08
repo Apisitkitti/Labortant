@@ -22,13 +22,13 @@ public class Turret : MonoBehaviour
     void Shoot()
 {
     // Instantiate a bullet at the fire point
-    GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+    GameObject bullet = Instantiate(bulletPrefab, firePoint.position, (firePoint.rotation));
 
     // Get the Rigidbody2D component
     Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 
     // if transform rotation z = 0 || 180,-180 
-    if(Mathf.Approximately(firePoint.rotation.eulerAngles.z, 0.0f)||Mathf.Approximately(firePoint.rotation.eulerAngles.z, 180.0f) )
+    if(Mathf.Approximately(firePoint.rotation.eulerAngles.z, 0.0f)||Mathf.Approximately(firePoint.rotation.eulerAngles.x, .0f) )
     {
         //unfreeze PositionY
         rb.constraints &= ~RigidbodyConstraints2D.FreezePositionY;

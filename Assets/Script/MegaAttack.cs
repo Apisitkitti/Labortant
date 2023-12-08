@@ -19,13 +19,11 @@ public class MegaAttack : MonoBehaviour
     private int originalDamage;
     
     [SerializeField] private Image imageCooldown;
-    [SerializeField] private TMP_Text textCooldown;
     [SerializeField] private Image frame;
 
     void Start()
     {
         attackScript = GetComponentInChildren<Attack>();
-        textCooldown.gameObject.SetActive(false);
         imageCooldown.fillAmount = 0.0f;
 
         if (attackScript == null)
@@ -81,16 +79,13 @@ public class MegaAttack : MonoBehaviour
     {
         isCooldown = true;
         float cooldownTimer = cooldownDuration;
-        textCooldown.gameObject.SetActive(true);
         while (cooldownTimer > 0f)
         {
-            textCooldown.text = Mathf.RoundToInt(cooldownTimer).ToString();
             imageCooldown.fillAmount = 1 - (cooldownTimer / cooldownDuration);
             yield return new WaitForSeconds(1f);
             cooldownTimer -= 1f;
         }
 
-        textCooldown.gameObject.SetActive(false);
         imageCooldown.fillAmount = 0.0f;
         isCooldown = false;
         isMegaAttackActive = false;
