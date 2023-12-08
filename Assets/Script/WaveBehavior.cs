@@ -35,7 +35,7 @@ public class WaveBehavior : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("enemy") || col.gameObject.CompareTag("Platform") || col.gameObject.CompareTag("Ground"))
+        if (col.gameObject.CompareTag("enemy") || col.gameObject.tag == "Platform"|| col.gameObject.tag == "Ground")
         {
             Collider2D enemyCollider = col.gameObject.GetComponent<Collider2D>();
 
