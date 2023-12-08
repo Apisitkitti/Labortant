@@ -213,34 +213,9 @@ public class Movement : MonoBehaviour
       transform.localScale = localScale;
     }
   }
-  private IEnumerator Dash()
+  private IEnumerator DashCooldown()
 {
-    canDash = false;
-    isDashing = true;
-    anim.SetBool("dash", true);
-
-    float originalGravity = rb.gravityScale;
-    rb.gravityScale = 0f;
-    rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
-    tr.emitting = true;
-
-    // Start dash cooldown coroutine
-    StartCoroutine(DashCooldown());
-
-    yield return new WaitForSeconds(dashingTime);
-
-    tr.emitting = false;
-    rb.gravityScale = originalGravity;
-    isDashing = false;
-    anim.SetBool("dash", false);
-
-    // No need to yield for dashingCooldown here
-    canDash = true;
-}
-
-private IEnumerator DashCooldown()
-{
-    isCooldown  = true;
+    isCooldown = true;
     float cooldownTimer = dashingCooldown;
 
     while (cooldownTimer > 0f)
@@ -254,7 +229,35 @@ private IEnumerator DashCooldown()
 
     // Reset UI elements when cooldown is complete
     dashCooldownFill.fillAmount = 0.0f;
-    isCooldown = false;
+    isCooldown = false;  // Corrected line to set isCooldown to false after the cooldown period
+}
+
+private IEnumerator Dash()
+{
+    if (!isCooldown)  // Added a check to see if there is no cooldown
+    {
+        canDash = false;
+        isDashing = true;
+        anim.SetBool("dash", true);
+
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        tr.emitting = true;
+
+        // Start dash cooldown coroutine
+        StartCoroutine(DashCooldown());
+
+        yield return new WaitForSeconds(dashingTime);
+
+        tr.emitting = false;
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        anim.SetBool("dash", false);
+
+        // No need to yield for dashingCooldown here
+        canDash = true;
+    }
 }
 
 
