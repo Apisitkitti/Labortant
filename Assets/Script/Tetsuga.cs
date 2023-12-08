@@ -10,6 +10,7 @@ public class Tetsuga : MonoBehaviour
     [SerializeField] private Image imageCooldown;
     [SerializeField] private Image frame;
     [SerializeField] private Player player;
+    [SerializeField] private Animator anim;
     private bool isCooldown = false;
     [SerializeField] private float WaveCooldown = 10f;
 
@@ -33,6 +34,7 @@ public class Tetsuga : MonoBehaviour
 
     public void PerformWaveAttack()
     {
+        anim.SetTrigger("blood_trig");
         // Instantiate the wave prefab
         Instantiate(WavePrefab, attackpo.position, Quaternion.identity);
     }
@@ -41,7 +43,6 @@ public class Tetsuga : MonoBehaviour
     {
         isCooldown = true;
         float cooldownTimer = WaveCooldown;
-
     
 
         while (cooldownTimer > 0f)

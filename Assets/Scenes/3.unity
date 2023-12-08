@@ -29972,62 +29972,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1237126224, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.4419
-      objectReference: {fileID: 0}
-    - target: {fileID: 1237126224, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.4419
-      objectReference: {fileID: 0}
-    - target: {fileID: 1237126224, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.4419
-      objectReference: {fileID: 0}
-    - target: {fileID: 1237126224, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.557
-      objectReference: {fileID: 0}
-    - target: {fileID: 1723526282, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.98
-      objectReference: {fileID: 0}
     - target: {fileID: 4105339926515111886, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
       propertyPath: frame
       value: 
       objectReference: {fileID: 624160900}
     - target: {fileID: 4105339926515111886, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: isInvincible
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4105339926515111886, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: textCooldown
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4105339926515111886, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
       propertyPath: imageCooldown
       value: 
       objectReference: {fileID: 1681193515}
-    - target: {fileID: 4505007272838928778, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505007272838928778, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505007273403947977, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: wave
-      value: 
-      objectReference: {fileID: 4505007273403947965}
     - target: {fileID: 4505007273403947977, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
       propertyPath: frame
       value: 
       objectReference: {fileID: 1104487878}
-    - target: {fileID: 4505007273403947977, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: textCooldown
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4505007273403947977, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
       propertyPath: imageCooldown
       value: 
@@ -30037,10 +29993,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 212282694}
     - target: {fileID: 4505007273403947982, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: textCooldown
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505007273403947982, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
       propertyPath: imageCooldown
       value: 
       objectReference: {fileID: 509334506}
@@ -30048,14 +30000,6 @@ PrefabInstance:
       propertyPath: Lose
       value: 
       objectReference: {fileID: 1368449511}
-    - target: {fileID: 4505007274223114034, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: button
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505007274223114034, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: Hp_text
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4505007274223114034, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
       propertyPath: healthBar
       value: 
@@ -30113,35 +30057,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2060789626}
     - target: {fileID: 4505007274223114045, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: dashingTime
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505007274223114045, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: dashingPower
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505007274223114045, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
       propertyPath: imageCooldown
       value: 
       objectReference: {fileID: 1286495193}
     - target: {fileID: 4505007274223114045, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: dashingCooldown
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505007274223114045, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
       propertyPath: dashCooldownFill
       value: 
       objectReference: {fileID: 1563504404}
-    - target: {fileID: 4505007274223114045, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: wallJumpingPower.x
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505007274223114045, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-      propertyPath: wallJumpingPower.y
-      value: 5.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4505007273403947968, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
 --- !u!4 &4505007273403947961 stripped
 Transform:
@@ -30157,17 +30080,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c46373f7468605845abbb20747ca1a68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4505007273403947965 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4505007273403947977, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
-  m_PrefabInstance: {fileID: 4505007273403947960}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1934986371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5318bec713cb45948854dfea6bfda963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &7621453220309712562

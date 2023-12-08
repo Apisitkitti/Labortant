@@ -12,11 +12,12 @@ public class Invincible : MonoBehaviour
   private bool isCooldown = false;
 
   [SerializeField] private float invincibilityCooldown = 10f; // Set the cooldown time in seconds
+  [SerializeField] private GameObject skill_display;
 
   // Start is called before the first frame update
   void Start()
   {
-   
+    skill_display.SetActive(false);
     imageCooldown.fillAmount = 0.0f;
   }
 
@@ -37,11 +38,13 @@ public class Invincible : MonoBehaviour
   private IEnumerator InvincibilityCoroutine(float duration)
   {
     // Add visual/audio effects for invincibility if desired
-    spriteRenderer.color = Color.green; // Set player color to indicate invincibility
+    
+    skill_display.SetActive(true); // Set player color to indicate invincibility
     yield return new WaitForSeconds(duration);
     // Reset invincibility state
     isInvincible = false;
-    spriteRenderer.color = Color.white; // Reset player color
+    skill_display.SetActive(false);
+     // Reset player color
   }
 
   private IEnumerator CooldownCoroutine()
