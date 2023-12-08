@@ -29,7 +29,7 @@ public class Invincible : MonoBehaviour
     {
       return;
     }
-    if (Input.GetKeyDown(KeyCode.Q) && player.Health >= 30 && !isCooldown)
+    if (Input.GetKeyDown(KeyCode.E) && player.Health >= 30 && !isCooldown)
     {
       ActivateInvincibility(player.invincibilityDuration);
       StartCoroutine(CooldownCoroutine());

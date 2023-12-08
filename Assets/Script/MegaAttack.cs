@@ -39,12 +39,6 @@ public class MegaAttack : MonoBehaviour
 
     void Update()
     {
-        if (player.currentHealth < 50)
-        {
-
-            return;
-        }
-
         if (Input.GetKeyDown(megaAttackKey) && !isCooldown)
         {
             ToggleMegaAttack();

@@ -22,7 +22,7 @@ public class Tetsuga : MonoBehaviour
 
     void Update()
     {
-        if(player.Health < 80)
+        if(player.Health < 50)
         {
           return;
         }

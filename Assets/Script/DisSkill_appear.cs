@@ -23,10 +23,6 @@ public class DisSkill_appear : MonoBehaviour
     }
     if(player.Health < 50)
     {
-      berserk.SetActive(false);
-    }
-    if(player.Health < 80)
-    {
       Tetsuga.SetActive(false);
     }
   }
@@ -37,10 +33,6 @@ public class DisSkill_appear : MonoBehaviour
       Invincible.SetActive(true);
     }
     if(player.Health >= 50)
-    {
-      berserk.SetActive(true);
-    }
-    if(player.Health >= 80)
     {
       Tetsuga.SetActive(true);
     }

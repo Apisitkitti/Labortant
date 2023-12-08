@@ -173,7 +173,7 @@ public class Movement : MonoBehaviour
 
   void OnCollisionEnter2D(Collision2D col)
   {
-    if (col.gameObject.tag == "Ground" || col.gameObject.tag == "Platform" || col.gameObject.tag == "Spike" || col.gameObject.tag == "enemy")
+    if (col.gameObject.tag == "Ground" || col.gameObject.tag == "Platform" || col.gameObject.tag == "Trap" || col.gameObject.tag == "enemy")
     {
       groundcheck = true;
       speed = currentSpeed;
