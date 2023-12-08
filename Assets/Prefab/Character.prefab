@@ -325,7 +325,7 @@ MonoBehaviour:
   currentAttack: 0
   damage: 10
   attackPoint: {fileID: 140858340}
-  attackRange: 0.75
+  attackRange: 0.7
   attackTime: 0.8
   enemyLayer:
     serializedVersion: 2
@@ -442,8 +442,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.19946253, y: -2.0586534}
-  m_Size: {x: 0.7353598, y: 0.1317228}
+  m_Offset: {x: -0.19946252, y: -1.9306672}
+  m_Size: {x: 0.73536, y: 0.121485725}
   m_Direction: 1
 --- !u!61 &4505007274223114032
 BoxCollider2D:
@@ -458,7 +458,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.18727073, y: -1.063797}
+  m_Offset: {x: -0.18727073, y: -0.9409287}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -469,7 +469,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6955201, y: 1.8459749}
+  m_Size: {x: 0.6955201, y: 1.856214}
   m_EdgeRadius: 0
 --- !u!114 &4505007274223114033
 MonoBehaviour:
