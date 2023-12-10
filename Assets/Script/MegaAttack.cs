@@ -20,11 +20,13 @@ public class MegaAttack : MonoBehaviour
     
     [SerializeField] private Image imageCooldown;
     [SerializeField] private Image frame;
+    [SerializeField] private GameObject skill_display;
 
     void Start()
     {
         attackScript = GetComponentInChildren<Attack>();
         imageCooldown.fillAmount = 0.0f;
+        skill_display.SetActive(false);
 
         if (attackScript == null)
         {
@@ -40,6 +42,7 @@ public class MegaAttack : MonoBehaviour
         if (Input.GetKeyDown(megaAttackKey) && !isCooldown)
         {
             ToggleMegaAttack();
+            skill_display.SetActive(true);
         }
 
         if (isTimerRunning)
@@ -49,10 +52,12 @@ public class MegaAttack : MonoBehaviour
             if (timer >= timeToHitEnemy)
             {
                 isTimerRunning = false;
+                skill_display.SetActive(false);
 
                 if (isMegaAttackActive)
                 {
                     DeactivateMegaAttack();
+    
                 }
             }
         }
@@ -106,5 +111,6 @@ public class MegaAttack : MonoBehaviour
         attackScript.damage = originalDamage;
         Debug.Log("Mega Attack Deactivated! Damage returned to normal.");
         Debug.Log("Damage reset = " + attackScript.damage);
+        skill_display.SetActive(false);
     }
 }
