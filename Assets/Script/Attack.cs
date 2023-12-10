@@ -51,13 +51,22 @@ public class Attack : MonoBehaviour
                 Vector2 knockbackDirection = (enemy.transform.position - transform.position).normalized;
                 enemy.GetComponent<EnemyAttribute>().TakeDam(damage, knockbackDirection);
                 if (megaAttackScript != null && megaAttackScript.isMegaAttackActive && !megaAttackScript.hasHealedDuringMegaAttack)
-        {
-            megaAttackScript.player.HealPlayer(20);
-            megaAttackScript.hasHealedDuringMegaAttack = true;
-            // Reset the damage in MegaAttack script
-            megaAttackScript.ResetDamageAttack();
-        }
+                    {
+                        megaAttackScript.player.HealPlayer(20);
+                        megaAttackScript.hasHealedDuringMegaAttack = true;
+                        // Reset the damage in MegaAttack script
+                        megaAttackScript.ResetDamageAttack();
+                    }
             }  
+                        // Check for barrels
+                Collider2D[] hitBarrels = Physics2D.OverlapCircleAll(attackPoint.position, attackRange);
+                foreach (Collider2D barrel in hitBarrels)
+                {
+                    if (barrel.CompareTag("HPBarrel")) // Assuming barrel has the tag "Barrel"
+                    {
+                        DamageBarrel(barrel);
+                    }
+                }
         }
 
     void OnDrawGizmosSelected()
@@ -68,4 +77,13 @@ public class Attack : MonoBehaviour
         }
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
+    void DamageBarrel(Collider2D barrel)
+{
+    // Check if the collider belongs to a barrel and apply damage to it
+    HPBarrel hpBarrel = barrel.GetComponent<HPBarrel>();
+    if (hpBarrel != null)
+    {
+        hpBarrel.TakeDamage(damage);
+    }
+}
 }

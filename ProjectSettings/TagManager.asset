@@ -12,6 +12,7 @@ TagManager:
   - Environment
   - Trap
   - Spike
+  - HPBarrel
   layers:
   - Default
   - TransparentFX
