@@ -325,7 +325,7 @@ MonoBehaviour:
   currentAttack: 0
   damage: 10
   attackPoint: {fileID: 140858340}
-  attackRange: 0.7
+  attackRange: 0.73
   attackTime: 0.8
   enemyLayer:
     serializedVersion: 2
@@ -542,7 +542,7 @@ MonoBehaviour:
   frame: {fileID: 0}
   spriteRenderer: {fileID: 4505007272838928779}
   isInvincible: 0
-  invincibilityCooldown: 10
+  invincibilityCooldown: 30
   skill_display: {fileID: 7720770418913893741}
 --- !u!114 &4505007273403947982
 MonoBehaviour:
@@ -742,6 +742,10 @@ PrefabInstance:
     - target: {fileID: 5061297089575290730, guid: 6ad54b0de7c7be8428c9df2ad9a2f16d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061297089575290731, guid: 6ad54b0de7c7be8428c9df2ad9a2f16d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ad54b0de7c7be8428c9df2ad9a2f16d, type: 3}

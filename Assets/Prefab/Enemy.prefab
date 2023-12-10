@@ -51,8 +51,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08293988, y: -0.89768606}
-  m_Size: {x: 1.8383689, y: 2.1435626}
+  m_Offset: {x: -0.047696248, y: -0.967552}
+  m_Size: {x: 1.5842972, y: 1.9627781}
   m_Direction: 0
 --- !u!114 &1369744571
 MonoBehaviour:
@@ -67,10 +67,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  knockbackDuration: 0.5
+  knockbackDuration: 1
   knockbackForce: 100
-  moveSpeed: 1
-  chaseRange: 7
+  moveSpeed: 2
+  chaseRange: 9
 --- !u!114 &1369744574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695dc8b921ce93a40a957530ba33eaa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 60
   spriteRenderer: {fileID: 3893787250549932809}
   Color_Transition: 1
   KnockbackForce: 100

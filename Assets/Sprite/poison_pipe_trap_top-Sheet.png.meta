@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ede789e2b6268484a8042585a2e82ef8
+guid: df58603fc9dd268498de8f902818d8d0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: poison_pipe_trap_left-Sheet_0
+      name: poison_pipe_trap_top-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a76a46beccb40b24180c28c6cd287e08
-      internalID: 1865627239
+      spriteID: 89cca0f08a081024c8922294864a94ec
+      internalID: -1529953084
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: poison_pipe_trap_left-Sheet_1
+      name: poison_pipe_trap_top-Sheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f50355c8f633ed40b9266402d3f31f0
-      internalID: 12832807
+      spriteID: bdb1313fad6d37b43bd1f23dd25cc92e
+      internalID: 1331710759
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: poison_pipe_trap_left-Sheet_2
+      name: poison_pipe_trap_top-Sheet_2
       rect:
         serializedVersion: 2
         x: 128
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32d93bec6c758ee498cbbe1ce7d7fe58
-      internalID: 1867154890
+      spriteID: 4cc2fabc8d892644790a37c01ec37f91
+      internalID: 784086222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: poison_pipe_trap_left-Sheet_3
+      name: poison_pipe_trap_top-Sheet_3
       rect:
         serializedVersion: 2
         x: 192
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62fae55fe2f1c644bb59ffaf55329828
-      internalID: 1042235370
+      spriteID: 7f895985b847aeb4d9d3ca5d4bfe0332
+      internalID: -1951427763
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: poison_pipe_trap_left-Sheet_4
+      name: poison_pipe_trap_top-Sheet_4
       rect:
         serializedVersion: 2
         x: 256
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5347df5ebb8efb48bf147a65cf48de3
-      internalID: 1627863124
+      spriteID: abdc33690cd5dd04d8e76c520ea9238b
+      internalID: 1875715515
       vertices: []
       indices: 
       edges: []
@@ -220,11 +220,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      poison_pipe_trap_left-Sheet_0: 1865627239
-      poison_pipe_trap_left-Sheet_1: 12832807
-      poison_pipe_trap_left-Sheet_2: 1867154890
-      poison_pipe_trap_left-Sheet_3: 1042235370
-      poison_pipe_trap_left-Sheet_4: 1627863124
+      poison_pipe_trap_top-Sheet_0: -1529953084
+      poison_pipe_trap_top-Sheet_1: 1331710759
+      poison_pipe_trap_top-Sheet_2: 784086222
+      poison_pipe_trap_top-Sheet_3: -1951427763
+      poison_pipe_trap_top-Sheet_4: 1875715515
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-     int damage = 15;
+    public int damage = 10;
     void OnTriggerEnter2D(Collider2D col)
     {
      if (col.gameObject.tag == "Player")
