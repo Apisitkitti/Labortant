@@ -566,6 +566,7 @@ MonoBehaviour:
   hasHealedDuringMegaAttack: 0
   imageCooldown: {fileID: 0}
   frame: {fileID: 0}
+  skill_display: {fileID: 0}
 --- !u!1 &7720770418913893741
 GameObject:
   m_ObjectHideFlags: 0

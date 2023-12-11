@@ -70,7 +70,7 @@ MonoBehaviour:
   knockbackDuration: 1
   knockbackForce: 100
   moveSpeed: 2
-  chaseRange: 9
+  chaseRange: 7
 --- !u!114 &1369744574
 MonoBehaviour:
   m_ObjectHideFlags: 0
