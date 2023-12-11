@@ -9,7 +9,7 @@ public class RestartButton : MonoBehaviour
   private int health_tuto = 20;
    public void Restart()
    {
-      HP.Health = HP.MaxHealth;
+      HP.Health = HP.CheckHealth;
       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
    }
    public void Restart_tutorial()

@@ -6,4 +6,6 @@ public class PlayerStat :  ScriptableObject
 {
   public int Health;
   public int MaxHealth = 100;
+  public int CheckHealth;
+  
 }

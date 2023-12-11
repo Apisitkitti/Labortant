@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
   void Start()
   {
     currentHealth = HP.Health;
+    HP.CheckHealth = currentHealth;
     healthBar.SetHealth(HP.Health);
   }
 
