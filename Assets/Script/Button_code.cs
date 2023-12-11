@@ -11,6 +11,6 @@ public class Button_code : MonoBehaviour
   }
   public void ChangeScene()
   {
-    SceneManager.LoadScene("art_test");
+    SceneManager.LoadScene("Tutoral");
   }
 }
