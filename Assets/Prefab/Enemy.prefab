@@ -70,7 +70,7 @@ MonoBehaviour:
   knockbackDuration: 1
   knockbackForce: 100
   moveSpeed: 2
-  chaseRange: 7
+  chaseRange: 9
 --- !u!114 &1369744574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +165,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 70
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
