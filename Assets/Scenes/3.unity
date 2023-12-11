@@ -16283,6 +16283,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6765767116352598341, guid: d56f6c3236b495042bb5e7cd3ba7bfe5, type: 3}
   m_PrefabInstance: {fileID: 1094715592}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1094961400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2593169116264592793, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
+  m_PrefabInstance: {fileID: 4505007273403947960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1099367389
 GameObject:
   m_ObjectHideFlags: 0
@@ -29690,6 +29695,10 @@ PrefabInstance:
       propertyPath: imageCooldown
       value: 
       objectReference: {fileID: 509334506}
+    - target: {fileID: 4505007273403947982, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
+      propertyPath: skill_display
+      value: 
+      objectReference: {fileID: 1094961400}
     - target: {fileID: 4505007274223114034, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
       propertyPath: Lose
       value: 

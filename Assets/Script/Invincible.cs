@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class Invincible : MonoBehaviour
 {
+  [SerializeField] private PlayerStat HP;
   [SerializeField] private Player player;
   [SerializeField] private Image imageCooldown;
   [SerializeField] private Image frame;
@@ -24,11 +25,11 @@ public class Invincible : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    if (player.Health < 30)
+    if (HP.Health < 30)
     {
       return;
     }
-    if (Input.GetKeyDown(KeyCode.E) && player.Health >= 30 && !isCooldown)
+    if (Input.GetKeyDown(KeyCode.E) && HP.Health >= 30 && !isCooldown)
     {
       ActivateInvincibility(player.invincibilityDuration);
       StartCoroutine(CooldownCoroutine());

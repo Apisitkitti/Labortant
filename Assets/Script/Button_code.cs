@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Button_code : MonoBehaviour
 {
+
   public void SetExit()
   {
     Application.Quit();

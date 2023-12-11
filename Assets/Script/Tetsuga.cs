@@ -9,7 +9,7 @@ public class Tetsuga : MonoBehaviour
     [SerializeField] private Transform attackpo;
     [SerializeField] private Image imageCooldown;
     [SerializeField] private Image frame;
-    [SerializeField] private Player player;
+    [SerializeField] private PlayerStat HP;
     [SerializeField] private Animator anim;
     private bool isCooldown = false;
     [SerializeField] private float WaveCooldown = 10f;
@@ -21,7 +21,7 @@ public class Tetsuga : MonoBehaviour
 
     void Update()
     {
-        if(player.Health < 50)
+        if(HP.Health < 50)
         {
           return;
         }

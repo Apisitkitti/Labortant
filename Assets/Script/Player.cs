@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-  
-  public int Health = 100;
+
   public HealthBar healthBar;
+  public int MaxHealth = 100;
+  [SerializeField]PlayerStat HP;
   public int currentHealth;
   public Animator anim;
   public SpriteRenderer spriteRenderer;
@@ -18,14 +19,12 @@ public class Player : MonoBehaviour
   [SerializeField] Invincible immortal;
 
  
-  private bool isMegaAttackActive = false;
 
   
   void Start()
   {
-    currentHealth = Health;
-    healthBar.SetMaxHealth(Health);
-
+    currentHealth = HP.Health;
+    healthBar.SetHealth(HP.Health);
   }
 
   void Update()
@@ -37,7 +36,7 @@ public class Player : MonoBehaviour
 {
     if (!immortal.isInvincible)
     {
-        Health -= damage;
+        HP.Health -= damage;
         currentHealth -= damage;
         StartCoroutine(Damage());
         healthBar.SetHealth(currentHealth);
@@ -54,7 +53,7 @@ public class Player : MonoBehaviour
   }
   void Hp()
   {
-    if(Health <= 0)
+    if(HP.Health <= 0)
     {
       Destroy(gameObject);
       Lose.SetActive(true);
@@ -66,7 +65,7 @@ public class Player : MonoBehaviour
   {
     currentHealth = 100;
   }
-  Health = currentHealth;
+  HP.Health = currentHealth;
   healthBar.SetHealth(currentHealth);
  }
 

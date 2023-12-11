@@ -60,4 +60,4 @@ MonoBehaviour:
   Invincible: {fileID: 0}
   Tetsuga: {fileID: 0}
   berserk: {fileID: 0}
-  player: {fileID: 0}
+  HP: {fileID: 11400000, guid: a8acac05208200b45b92724c29b37b50, type: 2}

@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 public class Goal_to_scene2 : MonoBehaviour
 {
   [SerializeField] GameObject Player;
+  [SerializeField] PlayerStat HP;
   // [SerializeField] GameObject Win;
    void OnTriggerEnter2D(Collider2D col)
    {
     if(col.gameObject.tag == "Player")
     {
       Destroy(Player);
-      // Win.SetActive(true);
       SceneManager.LoadScene("2");
     }
    }

@@ -8,7 +8,7 @@ public class DisSkill_appear : MonoBehaviour
   public GameObject Invincible;
   public GameObject Tetsuga;
   public GameObject berserk;
-  [SerializeField] private Player player;
+  [SerializeField] private PlayerStat HP;
   void Update()
   {
     SetSkill();
@@ -17,22 +17,22 @@ public class DisSkill_appear : MonoBehaviour
 
   void SetSkill()
   {
-     if(player.Health < 30)
+     if(HP.Health < 30)
     {
       Invincible.SetActive(false);
     }
-    if(player.Health < 50)
+    if(HP.Health < 50)
     {
       Tetsuga.SetActive(false);
     }
   }
   void makeskill()
   {
-    if(player.Health >= 30)
+    if(HP.Health >= 30)
     {
       Invincible.SetActive(true);
     }
-    if(player.Health >= 50)
+    if(HP.Health >= 50)
     {
       Tetsuga.SetActive(true);
     }
