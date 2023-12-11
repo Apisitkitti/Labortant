@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
 {
 
   public HealthBar healthBar;
-  public int MaxHealth = 100;
   [SerializeField]PlayerStat HP;
   public int currentHealth;
   public Animator anim;
