@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Goal : MonoBehaviour
+public class Goal_to_scene3 : MonoBehaviour
 {
   [SerializeField] GameObject Player;
   // [SerializeField] GameObject Win;
