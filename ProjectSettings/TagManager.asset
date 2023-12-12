@@ -13,6 +13,7 @@ TagManager:
   - Trap
   - Spike
   - HPBarrel
+  - CoreBoss
   layers:
   - Default
   - TransparentFX
