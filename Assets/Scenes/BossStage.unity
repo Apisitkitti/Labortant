@@ -538,7 +538,7 @@ MonoBehaviour:
   - {fileID: 844204470}
   - {fileID: 1810676199}
   - {fileID: 79588017}
-  numberOfPoisons: 7
+  numberOfPoisons: 20
   spawnInterval: 0.2
 --- !u!114 &135333685
 MonoBehaviour:
@@ -555,15 +555,15 @@ MonoBehaviour:
   releaseMonstersScript: {fileID: 135333686}
   releasePoisonFromPipesScript: {fileID: 135333684}
   releaseMonstersTimer: 8
-  releasePoisonFromPipesTimer: 5
-  releasePoisonPoolTimer: 12
-  ResetTimeMon: 8
-  ResetTimePoisonPool: 22
-  ResetTimePoison: 5
   warningObject: {fileID: 1364259340}
   warningTime: 5
   end_skil: 5
   anim: {fileID: 32703658}
+  elapsedTime: 0
+  ReleasePosion: 5
+  ReleasePool: 7
+  BackReleaseMon: 10
+  ResetTimeMon: 8
 --- !u!114 &135333686
 MonoBehaviour:
   m_ObjectHideFlags: 0
