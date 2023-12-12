@@ -16,14 +16,23 @@ public class BossBehavior: MonoBehaviour
 
     private void Start()
     {
-        releaseMonstersTimer = ResetTimeMon;
-        // releasePoisonPoolTimer = ResetTimePoisonPool;
-        releasePoisonFromPipesTimer = ResetTimePoison;
+        ResetBoss_Summon_Position();
     }
 
     private void Update()
     {
-        // Update timers
+       Boss_Spawnner_skill();
+    }
+
+    public void ResetBoss_Summon_Position()
+    {
+      releaseMonstersTimer = ResetTimeMon;
+        // releasePoisonPoolTimer = ResetTimePoisonPool;
+        releasePoisonFromPipesTimer = ResetTimePoison;
+    }
+    public void Boss_Spawnner_skill()
+    {
+       // Update timers
         releaseMonstersTimer -= Time.deltaTime;
         releasePoisonFromPipesTimer -= Time.deltaTime;
 
@@ -71,6 +80,5 @@ public class BossBehavior: MonoBehaviour
                 releasePoisonFromPipesTimer = ResetTimePoison; // Reset the timer for ReleasePoisonFromPipes
             }
         }
-
     }
 }
