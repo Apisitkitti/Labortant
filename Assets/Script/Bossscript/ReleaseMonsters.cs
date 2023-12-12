@@ -5,14 +5,10 @@ public class ReleaseMonsters : MonoBehaviour
     public GameObject monsterPrefab;
     public Transform[] releasePoints; // Array of positions to release monsters
 
-    public void Release()
+    public void Release(int zoneIndex)
     {
-        foreach (Transform point in releasePoints)
-        {
-            // Instantiate and release a single monster from each releasePoint
-            Vector3 spawnPosition = point.position; // Get the spawn position
-            Instantiate(monsterPrefab, spawnPosition, point.rotation);
-            // Add code for releasing a single monster
-        }
+        Vector3 spawnPosition = releasePoints[zoneIndex].position; // Get the spawn position for the chosen zone
+        Instantiate(monsterPrefab, spawnPosition, releasePoints[zoneIndex].rotation);
+        // Add code for releasing a single monster in the chosen zone
     }
 }
