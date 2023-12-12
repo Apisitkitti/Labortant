@@ -552,13 +552,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   releaseMonstersScript: {fileID: 135333686}
   releasePoisonFromPipesScript: {fileID: 135333684}
+  releaseMonstersTimer: 8
+  releasePoisonFromPipesTimer: 5
+  releasePoisonPoolTimer: 12
+  ResetTimeMon: 8
+  ResetTimePoisonPool: 22
+  ResetTimePoison: 5
   warningObject: {fileID: 1364259340}
   warningTime: 5
   end_skil: 5
-  releaseMonstersTimer: 8
-  releasePoisonFromPipesTimer: 5
-  ResetTimeMon: 8
-  ResetTimePoison: 5
   anim: {fileID: 32703658}
 --- !u!114 &135333686
 MonoBehaviour:

@@ -1,95 +1,111 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
-using Unity.VisualScripting;
 
 public class BossBehavior : MonoBehaviour
 {
-  public ReleaseMonsters releaseMonstersScript;
-  // public ReleasePoisonPool releasePoisonPoolScript;
-  public ReleasePoisonFromPipes releasePoisonFromPipesScript;
-  public GameObject warningObject;
-  public int warningTime;
-  public int end_skil;
-  public float releaseMonstersTimer; // Time interval for ReleaseMonsters
-  public float releasePoisonFromPipesTimer; // Time interval for ReleasePoisonFromPipes
+    public ReleaseMonsters releaseMonstersScript;
+    public ReleasePoisonFromPipes releasePoisonFromPipesScript;
 
-  public float ResetTimeMon; // Time interval for ReleaseMonsters
-                             // public float ResetTimePoisonPool = 15.0f; // Time interval for ReleasePoisonPool
-  public float ResetTimePoison; // Time interval for ReleasePoisonFromPipes
+    public float releaseMonstersTimer;
+    public float releasePoisonFromPipesTimer;
+    public float releasePoisonPoolTimer;
+    public float ResetTimeMon;
+    public float ResetTimePoisonPool = 15.0f;
+    public float ResetTimePoison;
+    public GameObject warningObject;
+    public int warningTime;
+    public int end_skil;
+    [SerializeField] Animator anim;
 
-  [SerializeField] Animator anim;
-
-  private void Start()
-  {
-    ResetBoss_Summon_Position();
-  }
-
-  private void Update()
-  {
-    Boss_Spawnner_skill();
-  }
-
-  public void ResetBoss_Summon_Position()
-  {
-    releaseMonstersTimer = ResetTimeMon;
-    // releasePoisonPoolTimer = ResetTimePoisonPool;
-    releasePoisonFromPipesTimer = ResetTimePoison;
-  }
-
-  public void Boss_Spawnner_skill()
-  {
-    // Update timers
-    releaseMonstersTimer -= Time.deltaTime;
-    releasePoisonFromPipesTimer -= Time.deltaTime;
-
-    // Check if it's time to release monsters
-    if (releaseMonstersTimer <= 0)
+    private void Start()
     {
-      int randomZoneCount = Random.Range(1, 3); // Randomly choose 1 or 2 zones
-      List<int> chosenZones = new List<int>();
+        releaseMonstersTimer = ResetTimeMon;
+     //   releasePoisonPoolTimer = ResetTimePoisonPool;
+        releasePoisonFromPipesTimer = ResetTimePoison;
+    }
 
-      while (chosenZones.Count < randomZoneCount)
-      {
-        int zoneIndex = Random.Range(0, 3);
-        if (!chosenZones.Contains(zoneIndex))
+    private void Update()
+    {
+        releaseMonstersTimer -= Time.deltaTime;
+        releasePoisonFromPipesTimer -= Time.deltaTime;
+        releasePoisonPoolTimer -= Time.deltaTime;
+
+        if (releaseMonstersTimer <= 0)
         {
-          chosenZones.Add(zoneIndex);
+            ActivateReleaseMon();
         }
-      }
 
-      foreach (int zoneIndex in chosenZones)
-      {
-        releaseMonstersScript.Release(zoneIndex);
-        releasePoisonFromPipesTimer = ResetTimePoison; // Reset the timer for ReleasePoisonFromPipes
-        releaseMonstersTimer = ResetTimeMon; // Reset the timer for ReleaseMonsters
-      }
+        if (releasePoisonFromPipesTimer <= 0)
+        {
+            ActivateReleasePoison();
+        }
+
+        if (releasePoisonPoolTimer <= 0)
+        {
+            StartCoroutine(ActivateFloodSkill());
+            releasePoisonPoolTimer = ResetTimePoisonPool;
+        }
     }
 
-    // Check if it's time to activate flood skill animation
-    if (releasePoisonFromPipesTimer <= 0)
+    void ActivateReleaseMon()
     {
-      StartCoroutine(ActivateFloodSkill());
+        int randomZoneCount = Random.Range(1, 3);
+        List<int> chosenZones = new List<int>();
+
+        while (chosenZones.Count < randomZoneCount)
+        {
+            int zoneIndex = Random.Range(0, 3);
+            if (!chosenZones.Contains(zoneIndex))
+            {
+                chosenZones.Add(zoneIndex);
+            }
+        }
+
+        foreach (int zoneIndex in chosenZones)
+        {
+            releaseMonstersScript.Release(zoneIndex);
+            releaseMonstersTimer = ResetTimeMon;
+        }
     }
-  }
 
-  IEnumerator ActivateFloodSkill()
-  {
-    anim.SetBool("PullDown", false);
-    anim.SetBool("PullDownstatic", false);
-    warningObject.SetActive(true);
-    yield return new WaitForSeconds(warningTime);
-    
-    warningObject.SetActive(false);
-    anim.SetBool("PullUp", true);
-    anim.SetBool("PullTopStill", true);
+    void ActivateReleasePoison()
+    {
+        int randomZoneCount = Random.Range(1, 3);
+        List<int> chosenZones = new List<int>();
 
-    yield return new WaitForSeconds(end_skil);
+        while (chosenZones.Count < randomZoneCount)
+        {
+            int zoneIndex = Random.Range(0, 3);
+            if (!chosenZones.Contains(zoneIndex))
+            {
+                chosenZones.Add(zoneIndex);
+            }
+        }
 
-    anim.SetBool("PullUp", false);
-    anim.SetBool("PullTopStill", false);
-    anim.SetBool("PullDown", true);
-     anim.SetBool("PullDownstatic", true);
-  }
+        foreach (int zoneIndex in chosenZones)
+        {
+            releasePoisonFromPipesScript.Release(zoneIndex);
+            releasePoisonFromPipesTimer = ResetTimePoison;
+        }
+    }
 
+    IEnumerator ActivateFloodSkill()
+    {
+        anim.SetBool("PullDown", false);
+        anim.SetBool("PullDownstatic", false);
+        warningObject.SetActive(true);
+        yield return new WaitForSeconds(warningTime);
+
+        warningObject.SetActive(false);
+        anim.SetBool("PullUp", true);
+        anim.SetBool("PullTopStill", true);
+
+        yield return new WaitForSeconds(end_skil);
+
+        anim.SetBool("PullUp", false);
+        anim.SetBool("PullTopStill", false);
+        anim.SetBool("PullDown", true);
+        anim.SetBool("PullDownstatic", true);
+    }
 }
