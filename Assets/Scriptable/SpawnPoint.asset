@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7de8a5e06e84bd439cdede806329a41, type: 3}
   m_Name: SpawnPoint
   m_EditorClassIdentifier: 
-  vector3: {x: 0, y: 0, z: 0}
+  SpawnPoint: {x: -0.11, y: 3.2, z: 0}
+  Scene: 4
