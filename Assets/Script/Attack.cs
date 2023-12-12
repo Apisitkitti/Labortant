@@ -67,6 +67,14 @@ public class Attack : MonoBehaviour
                         DamageBarrel(barrel);
                     }
                 }
+                Collider2D[] hitCore = Physics2D.OverlapCircleAll(attackPoint.position, attackRange);
+                foreach (Collider2D Core in hitCore)
+                {
+                    if (Core.CompareTag("CoreBoss")) // Assuming barrel has the tag "Barrel"
+                    {
+                        DamageCore(Core);
+                    }
+                }
         }
 
     void OnDrawGizmosSelected()
@@ -84,6 +92,15 @@ public class Attack : MonoBehaviour
     if (hpBarrel != null)
     {
         hpBarrel.TakeDamage(damage);
+    }
+}
+ void DamageCore(Collider2D core)
+{
+    // Check if the collider belongs to a boss core and apply damage to it
+    CoreBossHp coreBossHp = core.GetComponent<CoreBossHp>();
+    if (coreBossHp != null)
+    {
+        coreBossHp.TakeDamage(damage);
     }
 }
 }
