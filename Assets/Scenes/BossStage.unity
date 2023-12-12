@@ -538,6 +538,8 @@ MonoBehaviour:
   - {fileID: 844204470}
   - {fileID: 1810676199}
   - {fileID: 79588017}
+  numberOfPoisons: 7
+  spawnInterval: 0.2
 --- !u!114 &135333685
 MonoBehaviour:
   m_ObjectHideFlags: 0
