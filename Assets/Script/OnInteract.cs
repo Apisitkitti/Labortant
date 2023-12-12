@@ -17,7 +17,7 @@ public class OnInteract : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collider2D)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             tutorialUI.SetActive(true);
         }
