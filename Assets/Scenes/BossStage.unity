@@ -146,6 +146,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Trap
       objectReference: {fileID: 0}
+    - target: {fileID: 6844705689823462417, guid: cdc5cb8c6bfb304478b486ec3ddd4471, type: 3}
+      propertyPath: Lose
+      value: 
+      objectReference: {fileID: 885957841}
+    - target: {fileID: 6844705689823462417, guid: cdc5cb8c6bfb304478b486ec3ddd4471, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 337963353}
     - target: {fileID: 6844705689823462429, guid: cdc5cb8c6bfb304478b486ec3ddd4471, type: 3}
       propertyPath: m_TagString
       value: Trap
@@ -157,6 +165,10 @@ PrefabInstance:
     - target: {fileID: 6844705690162462909, guid: cdc5cb8c6bfb304478b486ec3ddd4471, type: 3}
       propertyPath: m_Name
       value: Poisonpool
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844705690162462909, guid: cdc5cb8c6bfb304478b486ec3ddd4471, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6844705690162462909, guid: cdc5cb8c6bfb304478b486ec3ddd4471, type: 3}
       propertyPath: m_TagString
@@ -210,7 +222,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Trap
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6844705689823462417, guid: cdc5cb8c6bfb304478b486ec3ddd4471, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cdc5cb8c6bfb304478b486ec3ddd4471, type: 3}
 --- !u!1 &32703657 stripped
 GameObject:
@@ -238,6 +251,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &32703660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32703657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94dcd039b90d4a24ca0209be43338543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  cooldownTime: 2
+--- !u!50 &32703661
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32703657}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &75255178
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,10 +552,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   releaseMonstersScript: {fileID: 135333686}
   releasePoisonFromPipesScript: {fileID: 135333684}
+  warningObject: {fileID: 1364259340}
+  warningTime: 5
+  end_skil: 5
   releaseMonstersTimer: 8
   releasePoisonFromPipesTimer: 5
   ResetTimeMon: 8
   ResetTimePoison: 5
+  anim: {fileID: 32703658}
 --- !u!114 &135333686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,6 +1095,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &337963353 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4505007272838928777, guid: 5415e55d2a97f37428f9a612524d75c3, type: 3}
+  m_PrefabInstance: {fileID: 405951182}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &405951182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2948,7 +3005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1364259341
 Transform:
   m_ObjectHideFlags: 0
@@ -3117,6 +3174,25 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: b2817488c99b33c4a82a052fd2f05f9c, type: 2}
+--- !u!1 &1531280579 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6844705689823462429, guid: cdc5cb8c6bfb304478b486ec3ddd4471, type: 3}
+  m_PrefabInstance: {fileID: 32703656}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1531280584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531280579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94dcd039b90d4a24ca0209be43338543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  cooldownTime: 2
 --- !u!1 &1617403412
 GameObject:
   m_ObjectHideFlags: 0
