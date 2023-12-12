@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c57609c452edb7a49b40a22019d7ca46
+guid: a46ef625d4159bf4badb9d5de750e59a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HP_UI 1_0
+      name: labotant_anim_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 72
-        width: 22
-        height: 25
+        x: 0
+        y: 0
+        width: 116
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc94c89e1db711f43ba4165c129226be
-      internalID: 1317983204
+      spriteID: 15c527cb83f6b00488dfb8c6f4952f71
+      internalID: -941093990
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HP_UI 1_1
+      name: labotant_anim_1
       rect:
         serializedVersion: 2
-        x: 19
-        y: 81
-        width: 25
-        height: 21
+        x: 116
+        y: 0
+        width: 116
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ae3edb7bb0c5ef468a052eb421a3859
-      internalID: 1564475129
+      spriteID: b1dca891f092a4742957d651e6638722
+      internalID: 936776052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labotant_anim_2
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 0
+        width: 116
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b825fcaf606cc4893b5c7a3e58cec9
+      internalID: -1680917202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labotant_anim_3
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 0
+        width: 116
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 019d83db639dfd743b2d6caab810638e
+      internalID: -1466912910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labotant_anim_4
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 0
+        width: 116
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ae8c3e5f3daa94f8e6471d082579c8
+      internalID: 300431813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: labotant_anim_5
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 0
+        width: 116
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 118434e17bf201a4ab7df46febf03974
+      internalID: 438719430
       vertices: []
       indices: 
       edges: []
@@ -157,8 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HP_UI 1_0: 1317983204
-      HP_UI 1_1: 1564475129
+      labotant_anim_0: -941093990
+      labotant_anim_1: 936776052
+      labotant_anim_2: -1680917202
+      labotant_anim_3: -1466912910
+      labotant_anim_4: 300431813
+      labotant_anim_5: 438719430
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
