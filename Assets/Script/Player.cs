@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
   public SpriteRenderer spriteRenderer;
   public float Color_Transition = 1f;
   public float invincibilityDuration = 5f;
+  [SerializeField] Checkpawn spawn;
   [SerializeField] GameObject Lose;
   [SerializeField] Invincible immortal;
 
@@ -25,6 +26,8 @@ public class Player : MonoBehaviour
     currentHealth = HP.Health;
     HP.CheckHealth = currentHealth;
     healthBar.SetHealth(HP.Health);
+    transform.position = spawn.SpawnPoint;
+  
   }
 
   void Update()
