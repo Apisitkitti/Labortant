@@ -4,4 +4,5 @@ using UnityEngine;
 public class Checkpawn : ScriptableObject
 {
     public Vector3 SpawnPoint;
+    public int Scene;
 }

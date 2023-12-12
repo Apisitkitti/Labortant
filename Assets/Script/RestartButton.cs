@@ -6,17 +6,15 @@ using UnityEngine.SceneManagement;
 public class RestartButton : MonoBehaviour
 {
   [SerializeField] private PlayerStat HP;
-  [SerializeField] private GameObject player;
+  [SerializeField] private Checkpawn spawn;
   private int health_tuto = 20;
-  [SerializeField] Checkpawn SpawnPoint;
    public void Restart()
 {
     if (HP != null)
     {
         HP.Health = HP.CheckHealth;
     }
-    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    player.transform.position = SpawnPoint.SpawnPoint;
+    SceneManager.LoadScene(spawn.Scene);
 }
 
 public void Restart_tutorial()
