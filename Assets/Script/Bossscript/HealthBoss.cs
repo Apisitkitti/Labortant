@@ -1,32 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthBoss : MonoBehaviour
 {
-    public int totalHealth = 0; // Total combined health of all CoreBossHp GameObjects
+    public int totalHealth = 0;
+    public HealthBar healthBar; // Reference to the HealthBar script
 
     void Start()
     {
-        // Find all GameObjects with CoreBossHp script and sum up their maxHealth
         CoreBossHp[] bossHealthScripts = FindObjectsOfType<CoreBossHp>();
         foreach (CoreBossHp bossHealthScript in bossHealthScripts)
         {
             totalHealth += bossHealthScript.maxHealth;
         }
+
+        // Update the max health on the health bar
+        healthBar.SetMaxHealth(totalHealth);
     }
 
-    // Function to reduce total health when any CoreBossHp GameObject takes damage
     public void ReduceTotalHealth(int damage)
     {
         totalHealth -= damage;
-
-        // You might want to add additional logic here, like checking for game over
-
+        healthBar.SetHealth(totalHealth); // Update the health bar
         if (totalHealth <= 0)
         {
-            // Handle game over or any other relevant logic
             Debug.Log("You Win ka Yedmae");
+            // Handle game over or any other relevant logic
         }
     }
 }
