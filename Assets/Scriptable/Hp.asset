@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b28468da5e13b84eb42597012c94e09, type: 3}
   m_Name: Hp
   m_EditorClassIdentifier: 
-  Health: 0
+  Health: 100
   MaxHealth: 100
-  CheckHealth: 0
+  CheckHealth: 90
