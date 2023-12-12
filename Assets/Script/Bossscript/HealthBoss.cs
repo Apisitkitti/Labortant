@@ -16,15 +16,17 @@ public class HealthBoss : MonoBehaviour
         // Update the max health on the health bar
         healthBar.SetMaxHealth(totalHealth);
     }
+    void Update()
+    {
+      if (totalHealth <= 0)
+        {
+           Time.timeScale = 0;
+        }
+    }
 
     public void ReduceTotalHealth(int damage)
     {
         totalHealth -= damage;
         healthBar.SetHealth(totalHealth); // Update the health bar
-        if (totalHealth <= 0)
-        {
-            Debug.Log("You Win ka Yedmae");
-            // Handle game over or any other relevant logic
-        }
     }
 }
