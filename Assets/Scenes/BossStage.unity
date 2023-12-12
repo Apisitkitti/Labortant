@@ -11850,6 +11850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawn: {fileID: 11400000, guid: d10b3c6eeaefd784ba1e616b978de2a0, type: 2}
   spawn2: {fileID: 11400000, guid: d10b3c6eeaefd784ba1e616b978de2a0, type: 2}
+  HP: {fileID: 11400000, guid: a8acac05208200b45b92724c29b37b50, type: 2}
 --- !u!114 &1967081126
 MonoBehaviour:
   m_ObjectHideFlags: 0
