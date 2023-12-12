@@ -46,7 +46,7 @@ public class BossBehavior: MonoBehaviour
             {
                 releaseMonstersScript.Release(zoneIndex);
                 releasePoisonFromPipesTimer = ResetTimePoison; // Reset the timer for ReleasePoisonFromPipes
-                releaseMonstersTimer = ResetTimeMon; // Reset the timer for ReleaseMonsters
+                 releaseMonstersTimer = ResetTimeMon; // Reset the timer for ReleaseMonsters
             }
         }
 
