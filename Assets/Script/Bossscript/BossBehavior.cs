@@ -1,56 +1,60 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class BossBehavior : MonoBehaviour
+public class BossBehavior: MonoBehaviour
 {
     public ReleaseMonsters releaseMonstersScript;
-   // public ReleasePoisonPool releasePoisonPoolScript;
+    // public ReleasePoisonPool releasePoisonPoolScript;
     public ReleasePoisonFromPipes releasePoisonFromPipesScript;
 
-    public float releaseInterval = 3.0f; // Time interval between skill releases
-    private float timer = 0.0f;
+    public float releaseMonstersTimer; // Time interval for ReleaseMonsters
+    public float releasePoisonFromPipesTimer; // Time interval for ReleasePoisonFromPipes
+
+    public float ResetTimeMon; // Time interval for ReleaseMonsters
+    // public float ResetTimePoisonPool = 15.0f; // Time interval for ReleasePoisonPool
+    public float ResetTimePoison ; // Time interval for ReleasePoisonFromPipes
+
+    private void Start()
+    {
+        releaseMonstersTimer = ResetTimeMon;
+        // releasePoisonPoolTimer = ResetTimePoisonPool;
+        releasePoisonFromPipesTimer = ResetTimePoison;
+    }
 
     private void Update()
     {
-        timer += Time.deltaTime;
+        // Update timers
+        releaseMonstersTimer -= Time.deltaTime;
+        releasePoisonFromPipesTimer -= Time.deltaTime;
 
-        if (timer >= releaseInterval)
+        // Check if it's time to release monsters
+        if (releaseMonstersTimer <= 0)
         {
-            // Reset timer
-            timer = 0.0f;
+            releaseMonstersScript.Release();
+            releaseMonstersTimer = ResetTimeMon; // Reset the timer for ReleaseMonsters
+        }
 
-            // Randomly choose which skill to release
-            int skillToRelease = Random.Range(1, 3);
+        // Check if it's time to release poison from pipes
+        if (releasePoisonFromPipesTimer <= 0)
+        {
+            int randomZoneCount = Random.Range(1, 3); // Randomly choose 1 or 2 zones
+            List<int> chosenZones = new List<int>();
 
-            switch (skillToRelease)
+            while (chosenZones.Count < randomZoneCount)
             {
-                case 1:
-                    releaseMonstersScript.Release();
-                    break;
-                /*case 2:
-                    releasePoisonPoolScript.Release();
-                    break;*/
-                case 2:
-                    int randomZoneCount = Random.Range(1, 3); // Randomly choose 1 or 2 zones
-                    List<int> chosenZones = new List<int>();
+                int zoneIndex = Random.Range(0, 3);
+                if (!chosenZones.Contains(zoneIndex))
+                {
+                    chosenZones.Add(zoneIndex);
+                }
+            }
 
-                    while (chosenZones.Count < randomZoneCount)
-                    {
-                        int zoneIndex = Random.Range(0, 3);
-                        if (!chosenZones.Contains(zoneIndex))
-                        {
-                            chosenZones.Add(zoneIndex);
-                        }
-                    }
-
-                    foreach (int zoneIndex in chosenZones)
-                    {
-                        releasePoisonFromPipesScript.Release(zoneIndex);
-                    }
-                    break;
-                default:
-                    break;
+            foreach (int zoneIndex in chosenZones)
+            {
+                releasePoisonFromPipesScript.Release(zoneIndex);
+                releasePoisonFromPipesTimer = ResetTimePoison; // Reset the timer for ReleasePoisonFromPipes
             }
         }
+
     }
 }
