@@ -8,43 +8,70 @@ public class BossBehavior : MonoBehaviour
     public ReleasePoisonFromPipes releasePoisonFromPipesScript;
 
     public float releaseMonstersTimer;
-    public float releasePoisonFromPipesTimer;
-    public float releasePoisonPoolTimer;
-    public float ResetTimeMon;
-    public float ResetTimePoisonPool = 15.0f;
-    public float ResetTimePoison;
     public GameObject warningObject;
     public int warningTime;
     public int end_skil;
     [SerializeField] Animator anim;
-
+    
+    private bool isMonstersActivated = false;
+    private bool isPoisonActivated = false;
+    private bool isFloodSkillActivated = false;
+    private bool isPullDownStaticActivated = false;
+    public float elapsedTime = 0f;
+    private bool floodSkillEnded = false;
+    public float ReleasePosion;
+    public float ReleasePool;
+    public float BackReleaseMon;
+    public float ResetTimeMon;
     private void Start()
     {
         releaseMonstersTimer = ResetTimeMon;
-     //   releasePoisonPoolTimer = ResetTimePoisonPool;
-        releasePoisonFromPipesTimer = ResetTimePoison;
     }
 
     private void Update()
     {
-        releaseMonstersTimer -= Time.deltaTime;
-        releasePoisonFromPipesTimer -= Time.deltaTime;
-        releasePoisonPoolTimer -= Time.deltaTime;
-
-        if (releaseMonstersTimer <= 0)
+        if (isMonstersActivated == false)
         {
-            ActivateReleaseMon();
+            releaseMonstersTimer -= Time.deltaTime;
+            if (releaseMonstersTimer <= 0)
+            {
+                ActivateReleaseMon();
+                isMonstersActivated = true;
+                elapsedTime = 0f;
+            }
         }
-
-        if (releasePoisonFromPipesTimer <= 0)
+        else if (!isPoisonActivated)
         {
-            ActivateReleasePoison();
+            elapsedTime += Time.deltaTime;
+            if (elapsedTime >= ReleasePosion)
+            {
+                ActivateReleasePoison();
+                isPoisonActivated = true;
+                elapsedTime = 0f;
+            }
         }
-
-        if (releasePoisonPoolTimer <= 0)
+        else if (!isFloodSkillActivated)
         {
-            StartCoroutine(ActivateFloodSkill());
-            releasePoisonPoolTimer = ResetTimePoisonPool;
+            elapsedTime += Time.deltaTime;
+            if (elapsedTime >= ReleasePosion)
+            {
+                StartCoroutine(ActivateFloodSkill());
+                isFloodSkillActivated = true;
+                elapsedTime = 0f;
+            }
+        }
+        else if (floodSkillEnded)
+        {
+            elapsedTime += Time.deltaTime;
+            if (elapsedTime >= BackReleaseMon)
+            {
+                isMonstersActivated = false;
+                isPoisonActivated = false;
+                isFloodSkillActivated = false;
+                isPullDownStaticActivated = false;
+                floodSkillEnded = false;
+                elapsedTime = 0f;
+            }
         }
     }
 
@@ -65,7 +92,6 @@ public class BossBehavior : MonoBehaviour
         foreach (int zoneIndex in chosenZones)
         {
             releaseMonstersScript.Release(zoneIndex);
-            releaseMonstersTimer = ResetTimeMon;
         }
     }
 
@@ -86,7 +112,6 @@ public class BossBehavior : MonoBehaviour
         foreach (int zoneIndex in chosenZones)
         {
             releasePoisonFromPipesScript.Release(zoneIndex);
-            releasePoisonFromPipesTimer = ResetTimePoison;
         }
     }
 
@@ -107,5 +132,6 @@ public class BossBehavior : MonoBehaviour
         anim.SetBool("PullTopStill", false);
         anim.SetBool("PullDown", true);
         anim.SetBool("PullDownstatic", true);
+        floodSkillEnded = true;
     }
 }
