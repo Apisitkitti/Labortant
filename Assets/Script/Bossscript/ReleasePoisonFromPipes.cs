@@ -22,4 +22,12 @@ public class ReleasePoisonFromPipes : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval); // Wait for the specified interval
         }
     }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        // Check if the collision is with an object tagged as "Ground"
+       if(col.gameObject.tag == "Trap")
+      {
+        Destroy(gameObject);
+      }
+    }
 }
