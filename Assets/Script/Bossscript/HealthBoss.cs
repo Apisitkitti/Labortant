@@ -1,12 +1,15 @@
 using UnityEngine;
 
+
 public class HealthBoss : MonoBehaviour
 {
     public int totalHealth = 0;
+    [SerializeField] GameObject win;
     public HealthBar healthBar; // Reference to the HealthBar script
 
     void Start()
     {
+      win.SetActive(false);
         CoreBossHp[] bossHealthScripts = FindObjectsOfType<CoreBossHp>();
         foreach (CoreBossHp bossHealthScript in bossHealthScripts)
         {
@@ -21,6 +24,7 @@ public class HealthBoss : MonoBehaviour
       if (totalHealth <= 0)
         {
            Time.timeScale = 0;
+            win.SetActive(true);
         }
     }
 

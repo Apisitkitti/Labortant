@@ -16,6 +16,7 @@ public class Button_code : MonoBehaviour
   {
     spawn2.SpawnPoint = spawn.SpawnPoint;
     spawn2.Scene = spawn.Scene;
+    Time.timeScale = 1;
     SceneManager.LoadScene(spawn.Scene);
   }
 }
