@@ -13,6 +13,7 @@ public class MegaAttack : MonoBehaviour
     bool isTimerRunning = false;
     float timer = 0f;
     public Player player; // Reference to the Player script
+    public AudioSource berserk;
     public float cooldownDuration = 10f; // Cooldown duration in seconds
     public float timeToHitEnemy = 5f; // Time limit to hit an enemy
     public bool hasHealedDuringMegaAttack = false;
@@ -21,6 +22,7 @@ public class MegaAttack : MonoBehaviour
     [SerializeField] private Image imageCooldown;
     [SerializeField] private Image frame;
     [SerializeField] private GameObject skill_display;
+    
 
     void Start()
     {
@@ -41,6 +43,7 @@ public class MegaAttack : MonoBehaviour
     {
         if (Input.GetKeyDown(megaAttackKey) && !isCooldown)
         {
+            berserk.Play();
             ToggleMegaAttack();
             skill_display.SetActive(true);
         }

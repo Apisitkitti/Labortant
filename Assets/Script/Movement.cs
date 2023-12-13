@@ -12,6 +12,10 @@ public class Movement : MonoBehaviour
   public float jumpboost = 5f;
   public float forward = 5f;
   public Animator anim;
+  public AudioSource jump_sound;
+  public AudioSource run_sound;
+  public AudioSource dash_sound;
+
 
 
   #endregion
@@ -88,6 +92,7 @@ public class Movement : MonoBehaviour
     if (horizontal > 0 || horizontal < 0)
     {
       anim.SetBool("run", true);
+      run_sound.Play();
     }
     else if (horizontal == 0)
     {
@@ -164,7 +169,7 @@ public class Movement : MonoBehaviour
 
   void Jump(float jumpboost)
   {
-
+    jump_sound.Play();
     rb.AddForce(Vector2.up * jumpboost);
     anim.SetBool("Jump", true);
     anim.SetBool("fall",false);
@@ -236,6 +241,7 @@ private IEnumerator Dash()
 {
     if (!isCooldown)  // Added a check to see if there is no cooldown
     {
+        dash_sound.Play();
         canDash = false;
         isDashing = true;
         anim.SetBool("dash", true);

@@ -333,6 +333,7 @@ MonoBehaviour:
   anim: {fileID: 1504526157}
   knockbackForce: 200
   megaAttackScript: {fileID: 4505007273403947982}
+  attack: {fileID: 0}
 --- !u!1 &4505007274223114043
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,6 +396,9 @@ MonoBehaviour:
   jumpboost: 515
   forward: 5
   anim: {fileID: 1504526157}
+  jump_sound: {fileID: 0}
+  run_sound: {fileID: 0}
+  dash_sound: {fileID: 0}
   wallJumpCooldown: 1
   tr: {fileID: 4505007272838928780}
   fallMultiplier: 2.25
@@ -499,13 +503,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  MaxHealth: 100
   HP: {fileID: 11400000, guid: a8acac05208200b45b92724c29b37b50, type: 2}
   currentHealth: 0
   anim: {fileID: 1504526157}
   spriteRenderer: {fileID: 4505007272838928779}
   Color_Transition: 0.5
   invincibilityDuration: 2
+  spawn: {fileID: 11400000, guid: d10b3c6eeaefd784ba1e616b978de2a0, type: 2}
   Lose: {fileID: 0}
   immortal: {fileID: 4105339926515111886}
 --- !u!114 &4505007273403947977
@@ -527,6 +531,7 @@ MonoBehaviour:
   HP: {fileID: 11400000, guid: a8acac05208200b45b92724c29b37b50, type: 2}
   anim: {fileID: 1504526157}
   WaveCooldown: 10
+  tetsuga: {fileID: 0}
 --- !u!114 &4105339926515111886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,12 +569,13 @@ MonoBehaviour:
   buffDamage: 3
   isMegaAttackActive: 0
   player: {fileID: 4505007274223114034}
+  berserk: {fileID: 0}
   cooldownDuration: 10
   timeToHitEnemy: 5
   hasHealedDuringMegaAttack: 0
   imageCooldown: {fileID: 0}
   frame: {fileID: 0}
-  skill_display: {fileID: 0}
+  skill_display: {fileID: 2593169116264592793}
 --- !u!1 &7720770418913893741
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,5 +836,10 @@ PrefabInstance:
 --- !u!4 &2593169116264592772 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7383103903704481138, guid: 219f0f6f1aa1bf44d9ccc9c352b2b325, type: 3}
+  m_PrefabInstance: {fileID: 5011033522352949494}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2593169116264592793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7383103903704481135, guid: 219f0f6f1aa1bf44d9ccc9c352b2b325, type: 3}
   m_PrefabInstance: {fileID: 5011033522352949494}
   m_PrefabAsset: {fileID: 0}

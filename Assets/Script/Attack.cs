@@ -16,6 +16,7 @@ public class Attack : MonoBehaviour
     public Animator anim;
     public float knockbackForce = 5f;
     public MegaAttack megaAttackScript;
+    public AudioSource attack;
 
     void Update()
 {
@@ -44,6 +45,7 @@ public class Attack : MonoBehaviour
 
         void AttackMode()
         {
+            attack.Play();
             anim.SetTrigger("attack");
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
             foreach (Collider2D enemy in hitEnemies)
